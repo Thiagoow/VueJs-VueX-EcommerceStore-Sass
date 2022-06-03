@@ -1,0 +1,75 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,800;1,200;1,400;1,600;1,800&display=swap');
+
+$header-height: 3.5rem;
+
+//========== Colors:
+$first-color: #111;
+$second-color: #ff6961;
+$alt-first-color: darken($first-color, 15%);
+$alt-second-color: darken($second-color, 15%);
+
+$title-color: #232329;
+$txt-color: #000;
+$txt-color-light: #6c6c7f;
+
+$body-color: #f3f3fc;
+$container-color: #fff;
+$shadow-color: rgba(#000, 0.2);
+$border-color: #000;
+
+$scroll-bar-color: #d7d7e0;
+$scroll-thumb-color: #8a8aa8;
+$scroll-hover-color: #b9b9c6;
+
+//========== Font and Typography:
+$body-font: 'Poppins', sans-serif;
+
+// .5rem = 8px, 1rem = 16px, 1.5rem = 24px ...
+$biggest-font-size: 2rem;
+$h1-font-size: 1.5rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1.35rem;
+$txt-font-size: 1.1rem;
+$normal-font-size: 1rem;
+$small-font-size: 0.875rem;
+$tiny-font-size: 0.813rem;
+
+//========== Font Weight:
+$wgt-extra-light: 200;
+$wgt-semi-bold: 600;
+$wgt-bolder: 800;
+
+/* ========== Margins:
+ .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+$mg-0-25: 0.25rem;
+$mg-0-5: 0.5rem;
+$mg-0-75: 0.75rem;
+$mg-1: 1rem;
+$mg-1-5: 1.5rem;
+$mg-1-75: 1.75rem;
+$mg-2: 2rem;
+$mg-2-5: 2.5rem;
+$mg-2-75: 2.75rem;
+$mg-3: 3rem;
+
+//========== Z-index:
+$z-tooltip: 10;
+$z-fixed: 100;
+$z-modal: 1000;
+
+//========== Border Radius:
+$border-outside-radius: 30px;
+$border-inside-radius: 10px;
+
+//========== Responsive Typography:
+@media screen and (min-width: 968px) {
+  $biggest-font-size: 2.5rem;
+  $h1-font-size: 2.25rem;
+  $h2-font-size: 1.5rem;
+  $h3-font-size: 1.25rem;
+  $txt-font-size: 1rem;
+  $normal-font-size: 0.875rem;
+  $small-font-size: 0.813rem;
+  $tiny-font-size: 0.8rem;
+}

@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as *;
+
+/*========== BUTTONS ==========*/
+.button {
+  display: inline-block;
+  background-color: $first-color;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: $wgt-semi-bold;
+  transition: 0.3s;
+  &:hover {
+    background-color: $alt-first-color;
+  }
+}
+
+.cartBtn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  font-size: 1.25rem;
+  padding: 0.5rem 0.625rem;
+  border-radius: 1rem 0 1rem 0;
+}

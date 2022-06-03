@@ -1,0 +1,8 @@
+@use '../abstracts/variables' as *;
+
+.container {
+  display: block;
+  max-width: 968px;
+  margin-left: $mg-1-5;
+  margin-right: $mg-1-5;
+}
