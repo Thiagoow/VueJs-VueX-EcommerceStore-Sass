@@ -5,7 +5,7 @@
 
 # Acme Store - Ecommerce Example (Vue.js, VueX, Sass)
 
-<p>Esse projeto foi desenvolvido por: <strong>Thiago Silva Lopes</strong>, em 06/2022.</br>
+<p>Projeto foi desenvolvido por: <strong>Thiago Silva Lopes</strong>, em 06/2022.</br>
 Para o desafio da vaga de Front End Jr, da Hype Empreendimentos.</p>
 
 ## Demo: https://vuex-acme-store.vercel.app
