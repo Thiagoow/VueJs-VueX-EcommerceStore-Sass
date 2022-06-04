@@ -1,14 +1,10 @@
 <template>
   <article class="card">
-    <div class="cardOverlay">
-      <a href="#open-modal" class="button">Descrição</a>
+    <div class="cardOverlay" @click="openModal">
+      <button class="button">Descrição</button>
     </div>
 
-    <img
-      src="https://i.picsum.photos/id/866/536/354.jpg?hmac=tGofDTV7tl2rprappPzKFiZ9vDh5MKj39oa2D--gqhA"
-      alt=""
-      class="img"
-    />
+    <img src="https://picsum.photos/536/354" alt="" class="img" />
     <a href="" class="favoriteBtn">
       <Icon icon="mdi:cards-heart-outline" />
     </a>
@@ -21,14 +17,14 @@
     </a>
 
     <div id="open-modal" class="modal">
-      <div>
-        <a href="#" title="Fechar modal" class="modal-close">
+      <div class="content">
+        <button @click="closeModal" title="Fechar modal" class="closeModalBtn">
           <Icon icon="mdi:window-close" />
-        </a>
-        <span>Descrição:</span>
-        <p>
-          A CSS-only modal based on the :target pseudo-class. Hope you find it
-          helpful.
+        </button>
+
+        <span class="title">Descrição:</span>
+        <p class="txt">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, quaerat!
         </p>
       </div>
     </div>
@@ -41,6 +37,16 @@ import { Icon } from '@iconify/vue';
 export default {
   components: {
     Icon
+  },
+  methods: {
+    openModal() {
+      const modalViews = document.getElementById('open-modal');
+      modalViews.classList.add('activeModal');
+    },
+    closeModal() {
+      const modalViews = document.getElementById('open-modal');
+      modalViews.classList.remove('activeModal');
+    }
   }
 };
 </script>
@@ -130,20 +136,18 @@ export default {
 /* MODAL */
 .modal {
   position: fixed;
-  background-color: $shadow-color;
   inset: 0;
-  z-index: 999;
+  z-index: $z-modal;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
   transition: all 0.3s;
+  background-color: $shadow-color;
 }
-.modal:target {
+.activeModal {
   visibility: visible;
   opacity: 1;
-  pointer-events: auto;
 }
-.modal > div {
+.modal .content {
   width: 25rem;
   position: absolute;
   top: 50%;
@@ -153,18 +157,18 @@ export default {
   background: $container-color;
   border-radius: 0.7rem;
 }
-.modal span {
+.modal .title {
   font-size: $h2-font-size;
   color: $title-color;
   font-weight: bold;
 }
-.modal p {
+.modal .txt {
   font-size: $normal-font-size;
   width: 100%;
   color: $txt-color;
   margin-top: 0.8rem;
 }
-.modal-close {
+.closeModalBtn {
   color: #f34747;
   font-size: 2.4rem;
   position: absolute;
@@ -172,8 +176,9 @@ export default {
   top: 0.6rem;
   width: 70px;
   text-align: center;
+  background: transparent;
 }
-.modal-close:hover {
+.closeModalBtn:hover {
   color: red;
 }
 
