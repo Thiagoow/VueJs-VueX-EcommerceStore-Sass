@@ -9,7 +9,7 @@
       alt=""
       class="img"
     />
-    <a href="" class="favoriteIcon">
+    <a href="" class="favoriteBtn">
       <Icon icon="mdi:cards-heart-outline" />
     </a>
 
@@ -84,7 +84,7 @@ export default {
   transition: 0.3s;
 }
 
-.favoriteIcon {
+.favoriteBtn {
   font-size: $h1-font-size;
   color: #f34747;
   position: absolute;
@@ -95,6 +95,10 @@ export default {
   padding: 0.2rem;
   border-radius: 50%;
   background-color: $container-color;
+
+  &:hover {
+    background-color: darken($container-color, 10%);
+  }
 }
 
 .price {
@@ -117,7 +121,7 @@ export default {
     font-size: $h3-font-size;
   }
 
-  .favoriteIcon {
+  .favoriteBtn {
     height: 1.8rem;
     font-size: $h2-font-size;
   }
