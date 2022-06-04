@@ -1,5 +1,6 @@
 <template>
   <main>
+    <Header />
     <section class="container">
       <SectionTitle title="Catálogo de Produtos" />
 
@@ -13,10 +14,11 @@
 <script>
 import SectionTitle from './components/SectionTitle.vue';
 import Card from './components/Card.vue';
+import Header from './components/Header.vue';
 
 export default {
-  name: 'App',
   components: {
+    Header,
     SectionTitle,
     Card
   }

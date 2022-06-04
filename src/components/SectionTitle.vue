@@ -1,4 +1,6 @@
 <template>
+  <br />
+  <br />
   <h2 class="sectionTitle">{{ title }}</h2>
 </template>
 
