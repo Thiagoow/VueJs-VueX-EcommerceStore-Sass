@@ -5,4 +5,13 @@
   max-width: 968px;
   margin-left: $mg-1-5;
   margin-right: $mg-1-5;
+
+  @media screen and (min-width: 992px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.grid {
+  display: grid;
 }
