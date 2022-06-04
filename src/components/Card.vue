@@ -4,17 +4,17 @@
       <button class="button">Descrição</button>
     </div>
 
-    <img src="https://picsum.photos/536/354" alt="" class="img" />
-    <a href="" class="favoriteBtn">
+    <img src="https://picsum.photos/536/354" alt="random image" class="img" />
+    <button class="favoriteBtn">
       <Icon icon="mdi:cards-heart-outline" />
-    </a>
+    </button>
 
     <h3 class="price">R$15,00</h3>
     <span class="title">Necessaire compreensivo</span>
 
-    <a href="" class="button cartBtn">
+    <button class="button cartBtn">
       <Icon icon="mdi:cart-outline" />
-    </a>
+    </button>
 
     <div id="open-modal" class="modal">
       <div class="content">
