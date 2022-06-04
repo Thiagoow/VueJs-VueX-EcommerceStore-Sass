@@ -1,7 +1,25 @@
-# Vue 3 + Vite
+<!--
+<div align="center">
+<img src="./ReadMeFiles/app.jpg" align="center">
+</div>-->
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Acme Store - Ecommerce Example (Vue.js, VueX, Sass)
 
-## Recommended IDE Setup
+<p>Esse projeto foi desenvolvido por: <strong>Thiago Silva Lopes</strong>, em 06/2022.</br>
+Para o desafio da vaga de Front End Jr, da Hype Empreendimentos.</p>
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Demo: https://vuex-acme-store.vercel.app
+
+##### Para instalar o projeto localmente, com a pasta "node_modules":
+
+```
+yarn install
+```
+
+##### Para compilar/executar o projeto:
+
+```
+yarn dev
+```
+
+<small>© Thiago Silva Lopes </small>
