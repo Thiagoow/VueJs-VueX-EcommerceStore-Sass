@@ -1,8 +1,8 @@
 <template>
   <header class="header" id="header">
     <nav class="nav bdGrid">
-      <a class="toggleIcon" id="nav-toggle">
-        <Icon icon="ic:round-menu" @click="toggleNav" />
+      <a class="toggleIcon">
+        <Icon icon="ic:round-menu" @click="toggleNav" id="nav-toggle" />
       </a>
 
       <a href="/" class="navLogo">Acme Store</a>
@@ -24,12 +24,12 @@
       <div class="btns">
         <a href="/favorites" class="favoriteIcon">
           <Icon icon="mdi:heart" />
-          <sup id="favoritesCount">12</sup>
+          <sup id="favoritesCount"></sup>
         </a>
 
         <a href="/cart" class="shopIcon">
           <Icon icon="mdi:shopping" />
-          <sup id="cartCount">12</sup>
+          <sup id="cartCount"></sup>
         </a>
       </div>
     </nav>
@@ -45,14 +45,8 @@ export default {
   },
   methods: {
     toggleNav() {
-      const toggle = document.getElementById('nav-toggle');
       const nav = document.getElementById('nav-menu');
-
-      if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-          nav.classList.toggle('showMenu');
-        });
-      }
+      nav.classList.toggle('showMenu');
     }
   }
 };
@@ -69,6 +63,11 @@ export default {
 
   width: calc(100% - 4rem);
   margin-left: $mg-2;
+
+  @media screen and (min-width: 1280px) {
+    width: 100%;
+    margin-left: 11rem;
+  }
 }
 
 .header {
@@ -81,6 +80,10 @@ export default {
   z-index: $z-fixed;
   background-color: $container-color;
   box-shadow: 0 2px 4px $shadow-color;
+}
+
+.showMenu {
+  left: 0 !important;
 }
 
 .nav {
@@ -122,6 +125,10 @@ export default {
   .navLogo {
     margin-left: 4rem;
     font-weight: $wgt-semi-bold;
+
+    @media screen and (max-width: 445px) {
+      margin-left: $mg-1-5;
+    }
   }
 
   .toggleIcon,
@@ -132,28 +139,29 @@ export default {
 
     .favoriteIcon {
       margin-right: $mg-3;
-    }
-    sup {
-      font-size: $small-font-size;
+
+      @media screen and (max-width: 445px) {
+        margin-right: $mg-1;
+      }
     }
   }
-
-  .showMenu {
-    left: 0;
+  sup {
+    font-size: $small-font-size;
   }
-  .activeLink {
-    position: relative;
+}
 
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: -0.5rem;
-      left: 45%;
-      width: 4px;
-      height: 4px;
-      background-color: $container-color;
-      border-radius: 50%;
-    }
+.activeLink {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 45%;
+    width: 4px;
+    height: 4px;
+    background-color: $container-color;
+    border-radius: 50%;
   }
 }
 
@@ -161,17 +169,13 @@ export default {
   .nav {
     height: calc($header-height + 0.8rem);
   }
+
   .toggleIcon {
     display: none;
   }
 
-  .navLogo {
-    margin-left: $mg-3;
-  }
-
   .navList {
     display: flex;
-    margin-left: 11.5rem;
 
     .navItem {
       margin-left: $mg-3;
@@ -183,6 +187,26 @@ export default {
         font-weight: $wgt-semi-bold;
       }
     }
+  }
+}
+
+.navList {
+  margin-left: 0%;
+
+  @media screen and (min-width: 800px) {
+    margin-left: 10%;
+  }
+  @media screen and (min-width: 860px) {
+    margin-left: 20%;
+  }
+  @media screen and (min-width: 900px) {
+    margin-left: 40%;
+  }
+  @media screen and (min-width: 960px) {
+    margin-left: 50%;
+  }
+  @media screen and (min-width: 1093px) {
+    margin-left: 60%;
   }
 }
 </style>
