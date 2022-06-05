@@ -10,18 +10,18 @@
       <div class="navMenu" id="nav-menu">
         <ul class="navList">
           <li class="navItem">
-            <a href="/" class="navLink activeLink">Home</a>
+            <a href="" class="navLink activeLink">Home</a>
           </li>
           <li class="navItem">
-            <a href="/produtos" class="navLink">Produtos</a>
+            <a href="" class="navLink">Produtos</a>
           </li>
           <li class="navItem">
-            <a href="/sobre" class="navLink">Sobre</a>
+            <a href="" class="navLink">Sobre</a>
           </li>
         </ul>
       </div>
 
-      <div class="btns">
+      <div class="iconBtns">
         <a href="/favorites" class="favoriteIcon">
           <Icon icon="mdi:heart" />
           <sup id="favoritesCount"></sup>
@@ -127,21 +127,21 @@ export default {
     font-weight: $wgt-semi-bold;
 
     @media screen and (max-width: 445px) {
-      margin-left: $mg-1-5;
+      margin-left: $mg-2;
     }
   }
 
   .toggleIcon,
-  .btns {
+  .iconBtns {
     cursor: pointer;
     margin-top: 0.5rem;
     font-size: calc($h2-font-size + 0.2rem);
 
-    .favoriteIcon {
-      margin-right: $mg-3;
+    .shopIcon {
+      margin-left: $mg-3;
 
       @media screen and (max-width: 445px) {
-        margin-right: $mg-1;
+        margin-left: $mg-2;
       }
     }
   }
