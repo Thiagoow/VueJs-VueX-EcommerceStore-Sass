@@ -128,6 +128,7 @@ for (let i = 0; i < productsArray.length; i++) {
   //Push a random object:
   productsArray[i] = {
     id: i + 1,
+    quantity: 1,
     name: rProduct.name,
     imgUrl: rProduct.imgUrl,
     price: rProduct.price,
