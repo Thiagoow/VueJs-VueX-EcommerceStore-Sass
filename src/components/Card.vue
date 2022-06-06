@@ -34,18 +34,7 @@
 <script>
 import { Icon } from '@iconify/vue';
 
-/*
-let real = 0;
-real = productsArray[1].price.toLocaleString('pt-BR', {
-  style: 'currency',
-  currency: 'BRL'
-});
-console.log(real); */
-
 export default {
-  components: {
-    Icon
-  },
   props: {
     name: {
       type: String,
@@ -63,6 +52,9 @@ export default {
       type: String,
       required: true
     }
+  },
+  components: {
+    Icon
   },
   methods: {
     openModal() {
