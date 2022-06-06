@@ -1,6 +1,6 @@
 <template>
   <div class="cardContainer grid">
-    <Card
+    <HomeCard
       name="Fulano Ciclano"
       imgUrl="https://picsum.photos/seed/nomeProduto/536/354"
       price="R$ 15,00"
@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import Card from './Card.vue';
+import HomeCard from './HomeCard.vue';
 
 export default {
   components: {
-    Card
+    HomeCard
   }
 };
 </script>
