@@ -1,8 +1,8 @@
 <template>
-  <article class="productCard">
-    <img class="productImg" :src="imgUrl" alt="random image" />
+  <article class="favoriteCard">
+    <img class="favoriteImg" :src="imgUrl" alt="random image" />
 
-    <div class="details">
+    <div class="favoriteDetails">
       <span class="name">{{ name }}</span>
       <p class="description">
         {{ description }}
@@ -42,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/scss/abstracts/variables' as *;
 
-.productCard {
+.favoriteCard {
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -53,17 +53,17 @@ export default {
   box-shadow: 0 4px 14px $shadow-color;
   border-radius: $border-inside-radius;
 
-  .productImg {
+  .favoriteImg {
     width: 25%;
     height: auto;
   }
 
   @media screen and (max-width: 612px) {
-    .productImg {
+    .favoriteImg {
       display: none;
     }
 
-    .details .description {
+    .favoriteDetails .description {
       width: 80%;
     }
 
@@ -80,7 +80,7 @@ export default {
   }
 }
 
-.details {
+.favoriteDetails {
   align-self: center;
   margin-left: $mg-1;
 
