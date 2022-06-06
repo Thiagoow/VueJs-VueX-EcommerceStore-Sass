@@ -12,7 +12,10 @@ import productsArray from './api/generateProducts';
 console.log(productsArray);
 
 const headers = {
-  'Content-Type': 'text/plain; charset=utf-8'
+  'Content-Type': 'text/plain; charset=utf-8',
+  //CORS with my ProxyServer that enables it:
+  'Access-Control-Allow-Origin':
+    'https://cors-proxyserver-thiagoow.herokuapp.com/'
 };
 
 for (let i = 0; i < productsArray.length; i++) {
