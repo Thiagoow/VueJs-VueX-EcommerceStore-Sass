@@ -4,13 +4,13 @@
       <button class="button">Descrição</button>
     </div>
 
-    <img src="https://picsum.photos/536/354" alt="random image" class="img" />
+    <img :src="imgUrl" alt="random image" class="img" />
     <button class="favoriteBtn">
       <Icon icon="mdi:cards-heart-outline" />
     </button>
 
-    <h3 class="price">R$15,00</h3>
-    <span class="title">Necessaire compreensivo</span>
+    <h3 class="price">{{ price }}</h3>
+    <span class="title">{{ name }}</span>
 
     <button class="button cartBtn">
       <Icon icon="mdi:cart-outline" />
@@ -24,7 +24,7 @@
 
         <span class="title">Descrição:</span>
         <p class="txt">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, quaerat!
+          {{ description }}
         </p>
       </div>
     </div>
@@ -45,6 +45,24 @@ console.log(real); */
 export default {
   components: {
     Icon
+  },
+  props: {
+    name: {
+      type: String,
+      required: true
+    },
+    imgUrl: {
+      type: String,
+      required: true
+    },
+    price: {
+      type: String || Number,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
+    }
   },
   methods: {
     openModal() {
