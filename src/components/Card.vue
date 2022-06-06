@@ -201,13 +201,13 @@ export default {
 }
 
 @media screen and (max-width: 470px) {
-  .modal > div {
+  .modal .content {
     width: 20rem;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .modal > div {
+  .modal .content {
     width: 15rem;
   }
 }
