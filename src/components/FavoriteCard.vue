@@ -49,6 +49,7 @@ export default {
   flex-direction: row;
   padding: 1rem;
   margin-top: $mg-1;
+  margin-bottom: $mg-1-5;
   background-color: $container-color;
   box-shadow: 0 4px 14px $shadow-color;
   border-radius: $border-inside-radius;
@@ -73,6 +74,7 @@ export default {
   }
   @media screen and (min-width: 768px) {
     margin-top: $mg-2-5;
+    margin-bottom: $mg-0-5;
     max-width: 664px;
     max-height: 134px;
     margin-left: auto;
