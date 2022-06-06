@@ -71,7 +71,7 @@ export default {
       padding-right: 0;
     }
   }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 768px) {
     margin-top: $mg-2-5;
     max-width: 664px;
     max-height: 134px;
