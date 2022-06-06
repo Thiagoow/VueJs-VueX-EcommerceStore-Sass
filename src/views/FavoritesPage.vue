@@ -27,5 +27,6 @@ export default {
   padding: 2rem;
   display: flex;
   background-color: $body-color;
+  flex-direction: column;
 }
 </style>
