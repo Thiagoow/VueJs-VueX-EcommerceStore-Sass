@@ -104,7 +104,7 @@ export default {
     @media screen and (min-width: 524px) {
       width: 30%;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       position: fixed;
       top: $header-height;
       left: -100%;
