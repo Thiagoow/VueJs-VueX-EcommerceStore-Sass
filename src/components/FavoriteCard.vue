@@ -1,0 +1,109 @@
+<template>
+  <article class="productCard">
+    <img class="productImg" :src="imgUrl" alt="random image" />
+
+    <div class="details">
+      <span class="name">{{ name }}</span>
+      <p class="description">
+        {{ description }}
+      </p>
+    </div>
+
+    <button class="favoriteBtn">
+      <Icon icon="mdi:cards-heart" />
+    </button>
+  </article>
+</template>
+
+<script>
+import { Icon } from '@iconify/vue';
+
+export default {
+  props: {
+    name: {
+      type: String,
+      required: true
+    },
+    imgUrl: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
+    }
+  },
+  components: {
+    Icon
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+@use '../assets/scss/abstracts/variables' as *;
+
+.productCard {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  padding: 1rem;
+  margin-top: $mg-1;
+  background-color: $container-color;
+  box-shadow: 0 4px 14px $shadow-color;
+  border-radius: $border-inside-radius;
+
+  .productImg {
+    width: 25%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 612px) {
+    .productImg {
+      display: none;
+    }
+
+    .details .description {
+      width: 80%;
+    }
+
+    .favoriteBtn {
+      padding-right: 0;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    margin-top: $mg-2-5;
+    max-width: 664px;
+    max-height: 134px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.details {
+  align-self: center;
+  margin-left: $mg-1;
+
+  .name {
+    font-weight: $wgt-semi-bold;
+  }
+
+  .description {
+    margin-top: $mg-0-5;
+    width: 90%;
+  }
+}
+
+.favoriteBtn {
+  background: transparent;
+  font-size: $mg-1-75;
+  display: flex;
+  align-self: center;
+  color: $second-color;
+  padding: 0 1rem 1rem 0;
+
+  &:hover {
+    color: $alt-second-color;
+  }
+}
+</style>
