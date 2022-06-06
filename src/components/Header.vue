@@ -22,15 +22,15 @@
       </div>
 
       <div class="iconBtns">
-        <a href="/favorites" class="favoriteIcon">
+        <router-link to="favoritos" class="favoriteIcon">
           <Icon icon="mdi:heart" />
           <sup id="favoritesCount"></sup>
-        </a>
+        </router-link>
 
-        <a href="/cart" class="shopIcon">
+        <router-link to="carrinho" class="shopIcon">
           <Icon icon="mdi:shopping" />
           <sup id="cartCount"></sup>
-        </a>
+        </router-link>
       </div>
     </nav>
   </header>
