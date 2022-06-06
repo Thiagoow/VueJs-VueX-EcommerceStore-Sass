@@ -111,10 +111,16 @@ function generateRandomData() {
   const rDesc = `${rName} random description. Lorem ipsum dolor.`;
   const rPrice = 10 + rName.length * ((rDesc.length - 5) / rName.length - 3);
 
+  let rPriceInBrl = 0;
+  rPriceInBrl = rPrice.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  });
+
   const randomProduct = {
     name: rName,
     imgUrl: rImg,
-    price: rPrice,
+    price: rPriceInBrl,
     description: rDesc
   };
 
