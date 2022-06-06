@@ -105,7 +105,9 @@ const lastNames = [
 function generateRandomData() {
   const randomI = Math.floor(Math.random() * firstNames.length);
   const rName = `${firstNames[randomI]} ${lastNames[randomI]}`;
-  const rImg = 'https://picsum.photos/536/354';
+  const nameNoSpaces = rName.replace(/\s/g, '');
+
+  const rImg = `https://picsum.photos/seed/${nameNoSpaces}/536/354`;
   const rDesc = `${rName} random description. Lorem ipsum dolor.`;
   const rPrice = 10 + rName.length * ((rDesc.length - 5) / rName.length - 3);
 
