@@ -17,7 +17,7 @@ export const getProduct = ({ commit }, productId) => {
 };
 
 // Add a product to cart array
-export const addProduct = ({ commit }, { product, quantity }) => {
+export const addCart = ({ commit }, { product, quantity }) => {
   commit('ADD_TO_CART', { product, quantity }); //👈🏽 Add to VueX state
   Cart.store({
     product,
