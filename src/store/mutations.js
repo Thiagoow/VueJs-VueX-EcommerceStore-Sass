@@ -32,13 +32,25 @@ export const ADD_TO_FAVORITE = (state, { product }) => {
   let productInFavorite = state.favorites.find((item) => {
     return item.product.id === product.id;
   });
+
   if (productInFavorite) {
-    //Delete from VueX state:
-    state.favorites.splice(productInFavorite, 2);
-    //TODO: Delete TWICE from API:
-    state.favorites.delete(productInFavorite.id);
+    const sameProductsInFavorite = new Array(state.favorites.length);
+    //Put on array every product with the same id:
+    for (let i = 0; i < sameProductsInFavorite.length; i++) {
+      if (state.favorites[i].product.id === product.id) {
+        sameProductsInFavorite[i] = state.favorites[i];
+      }
+    }
+
+    for (let i = 0; i < sameProductsInFavorite.length; i++) {
+      //Delete from VueX state:
+      state.favorites.splice(productInFavorite, 1);
+      //Delete from API:
+      state.favorites.delete(productInFavorite.id);
+    }
     return;
   }
+
   state.favorites.push({
     product
   });
