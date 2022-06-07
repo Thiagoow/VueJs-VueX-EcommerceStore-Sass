@@ -138,10 +138,11 @@ export default {
       margin-left: $mg-3;
 
       display: flex;
+      flex-direction: row-reverse;
 
       .decreaseBtn {
         margin-bottom: $mg-1;
-        margin-left: $mg-0-75;
+        margin-right: $mg-0-75;
       }
     }
 
