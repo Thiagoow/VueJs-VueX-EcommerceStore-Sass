@@ -1,14 +1,15 @@
-// Insert on VueX state all products from API:
+// Get all products from API & insert on VueX state:
 export const GET_PRODUCTS = (state, products) => {
   state.products = products;
 };
 
-// Get a specific product from API and insert on VueX state:
+/* Get a specific product from API and
+ insert on VueX singleProduct state: */
 export const GET_PRODUCT = (state, singleProduct) => {
   state.singleProduct = singleProduct;
 };
 
-// Add Product to cart VueX state:
+// Add Product to cart API route & VueX state:
 export const ADD_TO_CART = (state, { product, quantity }) => {
   // Check if product already exists in cart:
   let productInCart = state.cart.find((item) => {
@@ -19,14 +20,14 @@ export const ADD_TO_CART = (state, { product, quantity }) => {
     productInCart.quantity += quantity;
     return;
   }
-  //Else, push the product to VueX state:
+  //Else, push the product:
   state.cart.push({
     product,
     quantity
   });
 };
 
-// Add Product to favorites VueX state:
+// Add Product to favorites API route & VueX state:
 export const ADD_TO_FAVORITE = (state, { product, quantity }) => {
   let productInFavorite = state.favorites.find((item) => {
     return item.product.id === product.id;
@@ -42,19 +43,17 @@ export const ADD_TO_FAVORITE = (state, { product, quantity }) => {
   });
 };
 
-// Get all items in cart route
+// Get all items in cart route & insert on VueX state:
 export const GET_CART = (state, cart) => {
   state.cart = cart;
 };
 
-// Get all items in favorites route
+// Get all items in favorites route & insert on VueX state:
 export const GET_FAVORITES = (state, favorites) => {
   state.favorites = favorites;
 };
 
-//============TODO: & API? 🤔
-
-// Remove from cart in state & API
+// Remove from cart in state & API:
 export const REMOVE_CART = (state, singleProduct) => {
   /* state.cart = state.cart.filter((item) => {
     return item.singleProduct.id !== singleProduct.id;
@@ -63,7 +62,7 @@ export const REMOVE_CART = (state, singleProduct) => {
   state.cart.splice(singleProduct, 1);
 };
 
-// Remove from favorite on state & API
+// Remove from favorite on state & API:
 export const REMOVE_FAVORITE = (state, singleProduct) => {
   state.favorites.splice(singleProduct, 1);
 };
