@@ -9,7 +9,10 @@
       </p>
     </div>
 
-    <button class="favoriteBtn">
+    <button
+      class="favoriteBtn"
+      @click.prevent="$event.stopPropagation(removeFavorite(product))"
+    >
       <Icon icon="mdi:cards-heart" />
     </button>
   </article>
@@ -17,9 +20,18 @@
 
 <script>
 import { Icon } from '@iconify/vue';
+import { mapActions } from 'vuex';
 
 export default {
   props: {
+    ['product']: {
+      type: Object,
+      required: true
+    },
+    id: {
+      type: Number,
+      required: true
+    },
     name: {
       type: String,
       required: true
@@ -35,6 +47,9 @@ export default {
   },
   components: {
     Icon
+  },
+  methods: {
+    ...mapActions(['removeFavorite'])
   }
 };
 </script>
