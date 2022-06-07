@@ -29,7 +29,7 @@ export const addCart = ({ commit }, { product, quantity }) => {
 // Add a product to favorites array
 export const addFavorite = ({ commit }, { product }) => {
   commit('ADD_TO_FAVORITE', { product });
-  Cart.store({
+  Favorites.store({
     product
   });
 };
@@ -58,7 +58,7 @@ export const removeCart = ({ commit }, product) => {
 // Delete a single product from favorites
 export const removeFavorite = ({ commit }, product) => {
   commit('REMOVE_FAVORITE', product);
-  Cart.delete(product.id);
+  Favorites.delete(product.id);
 };
 
 // Delete all products from cart array
