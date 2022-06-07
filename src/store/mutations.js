@@ -9,10 +9,10 @@ export const GET_PRODUCT = (state, singleProduct) => {
 };
 
 // Add Product to cart VueX state:
-export const ADD_TO_CART = (state, { singleProduct, quantity }) => {
+export const ADD_TO_CART = (state, { product, quantity }) => {
   // Check if product already exists in cart:
   let productInCart = state.cart.find((item) => {
-    return item.singleProduct.id === singleProduct.id;
+    return item.product.id === product.id;
   });
   //If already has one:
   if (productInCart) {
@@ -21,7 +21,7 @@ export const ADD_TO_CART = (state, { singleProduct, quantity }) => {
   }
   //Else, push the product to VueX state:
   state.cart.push({
-    singleProduct,
+    product,
     quantity
   });
 };
