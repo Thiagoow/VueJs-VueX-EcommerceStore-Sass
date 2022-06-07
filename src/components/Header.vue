@@ -24,12 +24,12 @@
       <div class="iconBtns">
         <router-link to="favoritos" class="favoriteIcon">
           <Icon icon="mdi:heart" />
-          <sup id="favoritesCount"></sup>
+          <sup id="favoritesCount">{{ favoritesItemCount }}</sup>
         </router-link>
 
         <router-link to="carrinho" class="shopIcon">
           <Icon icon="mdi:shopping" />
-          <sup id="cartCount"></sup>
+          <sup id="cartCount">{{ cartItemCount }}</sup>
         </router-link>
       </div>
     </nav>
@@ -38,16 +38,28 @@
 
 <script>
 import { Icon } from '@iconify/vue';
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
   components: {
     Icon
   },
+  computed: {
+    ...mapState(['cart', 'favorites']),
+    ...mapGetters(['cartItemCount', 'favoritesItemCount'])
+  },
+  mounted() {
+    /* When app is initialized, get
+    all items from cart & favorites API route: */
+    this.getCartItems();
+    this.getFavoriteItems();
+  },
   methods: {
     toggleNav() {
       const nav = document.getElementById('nav-menu');
       nav.classList.toggle('showMenu');
-    }
+    },
+    ...mapActions(['getCartItems', 'getFavoriteItems'])
   }
 };
 </script>
