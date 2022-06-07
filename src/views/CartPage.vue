@@ -9,7 +9,7 @@
         :name="i.product.name"
         :imgUrl="i.product.imgUrl"
         :price="i.product.price"
-        :quantity="i.product.quantity"
+        :quantity="1"
         :description="i.product.description"
       />
     </section>
