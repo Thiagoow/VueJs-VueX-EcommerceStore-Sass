@@ -5,10 +5,10 @@
     <div class="productDetails">
       <span class="name">
         {{ name }}
-        <b>~ {{ price }}</b>
+        <b>~ {{ ConvertToReal }}</b>
       </span>
 
-      <p class="price">{{ price }}</p>
+      <p class="price">{{ ConvertToReal }}</p>
       <p class="description">
         {{ description }}
       </p>
@@ -61,7 +61,7 @@ export default {
       required: true
     },
     price: {
-      type: String || Number,
+      type: Number,
       required: true
     },
     quantity: {
@@ -75,6 +75,22 @@ export default {
   },
   components: {
     Icon
+  },
+  data() {
+    const priceInBrl = Math.abs(this.price);
+    //☝🏽 Math.abs() -> Convert number to positive
+    return {
+      priceInBrl
+    };
+  },
+  computed: {
+    ConvertToReal() {
+      return this.priceInBrl.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        minimumFractionDigits: 2
+      });
+    }
   },
   methods: {
     ...mapActions(['addCart', 'clearCart', 'removeCart']),
