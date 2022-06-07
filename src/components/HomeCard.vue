@@ -9,7 +9,7 @@
       <Icon icon="mdi:cards-heart-outline" />
     </button>
 
-    <h3 class="price">{{ price }}</h3>
+    <h3 class="price">{{ ConvertToReal }}</h3>
     <span class="title">{{ name }}</span>
 
     <button class="button cartBtn" @click="addToCart()">
@@ -50,7 +50,7 @@ export default {
       required: true
     },
     price: {
-      type: String || Number,
+      type: Number,
       required: true
     },
     quantity: {
@@ -64,6 +64,22 @@ export default {
   },
   components: {
     Icon
+  },
+  data() {
+    const priceInBrl = Math.abs(this.price);
+    //☝🏽 Math.abs() -> Convert number to positive
+    return {
+      priceInBrl
+    };
+  },
+  computed: {
+    ConvertToReal() {
+      return this.priceInBrl.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        minimumFractionDigits: 2
+      });
+    }
   },
   methods: {
     openModal() {
