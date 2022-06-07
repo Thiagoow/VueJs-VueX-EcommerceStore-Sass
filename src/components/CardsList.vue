@@ -8,7 +8,7 @@
       :name="i.name"
       :imgUrl="i.imgUrl"
       :price="i.price"
-      :quantity="i.quantity"
+      :quantity="1"
       :description="i.description"
     />
   </div>
