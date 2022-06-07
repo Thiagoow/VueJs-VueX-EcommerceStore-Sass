@@ -2,11 +2,14 @@
   <main>
     <section class="productsContainer">
       <ProductCard
-        name="Fulano Ciclano"
-        imgUrl="https://picsum.photos/seed/nomeProduto/536/354"
-        price="R$ 15,00"
-        quantity="1"
-        description="Fulano Ciclano random description. Lorem ipsum dolor."
+        v-for="i in cart"
+        :key="i.product.id"
+        :id="i.product.id"
+        :name="i.product.name"
+        :imgUrl="i.product.imgUrl"
+        :price="i.product.price"
+        :quantity="i.product.quantity"
+        :description="i.product.description"
       />
     </section>
   </main>
@@ -14,10 +17,23 @@
 
 <script>
 import ProductCard from '../components/ProductCard.vue';
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
   components: {
     ProductCard
+  },
+  computed: {
+    ...mapState(['cart']),
+    ...mapGetters(['cartItemCount', 'cartTotalPrice'])
+  },
+  mounted() {
+    /* When app is initialized, get 
+    all items from cart API route: */
+    this.getCartItems();
+  },
+  methods: {
+    ...mapActions(['getCartItems', 'removeCart', 'clearCart'])
   }
 };
 </script>
