@@ -15,7 +15,10 @@
     </div>
 
     <div class="moreMinusBtns">
-      <button class="increaseBtn btns">
+      <button
+        class="increaseBtn btns"
+        @click.prevent="$event.stopPropagation(addToCart())"
+      >
         <Icon icon="mdi:plus" />
       </button>
 
@@ -24,7 +27,10 @@
       </button>
     </div>
 
-    <button class="removeBtn btns">
+    <button
+      class="removeBtn btns"
+      @click.prevent="$event.stopPropagation(removeCart(product))"
+    >
       <Icon icon="mdi:selection-ellipse-remove" />
     </button>
 
@@ -34,9 +40,18 @@
 
 <script>
 import { Icon } from '@iconify/vue';
+import { mapActions } from 'vuex';
 
 export default {
   props: {
+    ['product']: {
+      type: Object,
+      required: true
+    },
+    id: {
+      type: Number,
+      required: true
+    },
     name: {
       type: String,
       required: true
@@ -60,6 +75,15 @@ export default {
   },
   components: {
     Icon
+  },
+  methods: {
+    ...mapActions(['addCart', 'clearCart', 'removeCart']),
+    addToCart() {
+      this.addCart({
+        product: this.item,
+        quantity: this.quantity
+      });
+    }
   }
 };
 </script>
