@@ -26,6 +26,6 @@ yarn dev
 https://github.com/Thiagoow/API-VueX-EcommerceStore-JsonServer 
 </p>
 
-<p align="center">(E mude a 'baseURL:' em 'src/path') </p>
+<p align="center">(E mude a 'baseURL:' em 'src/API/axios.js') </p>
 
 <small>© Thiago Silva Lopes </small>
