@@ -27,9 +27,9 @@ export const ADD_TO_CART = (state, { product, quantity }) => {
 };
 
 // Add Product to favorites VueX state:
-export const ADD_TO_FAVORITE = (state, { singleProduct, quantity }) => {
+export const ADD_TO_FAVORITE = (state, { product, quantity }) => {
   let productInFavorite = state.favorites.find((item) => {
-    return item.singleProduct.id === singleProduct.id;
+    return item.product.id === product.id;
   });
   if (productInFavorite) {
     /*====TODO: REMOVE FROM FAVORITES❗❗ 
@@ -37,7 +37,7 @@ export const ADD_TO_FAVORITE = (state, { singleProduct, quantity }) => {
     return;
   }
   state.favorites.push({
-    singleProduct,
+    product,
     quantity
   });
 };
