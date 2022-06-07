@@ -33,8 +33,10 @@ export const ADD_TO_FAVORITE = (state, { product }) => {
     return item.product.id === product.id;
   });
   if (productInFavorite) {
-    /*====TODO: REMOVE FROM FAVORITES❗❗ 
-    productInFavorite.quantity += quantity; */
+    //Delete from VueX state:
+    state.favorites.splice(productInFavorite, 2);
+    //TODO: Delete TWICE from API:
+    state.favorites.delete(productInFavorite.id);
     return;
   }
   state.favorites.push({
