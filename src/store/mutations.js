@@ -5,14 +5,14 @@ export const GET_PRODUCTS = (state, products) => {
 
 // Get a specific product from API and insert on VueX state:
 export const GET_PRODUCT = (state, singleProduct) => {
-  state.singleProduct = product;
+  state.singleProduct = singleProduct;
 };
 
 // Add Product to cart VueX state:
 export const ADD_TO_CART = (state, { singleProduct, quantity }) => {
   // Check if product already exists in cart:
   let productInCart = state.cart.find((item) => {
-    return item.singleProduct.id === product.id;
+    return item.singleProduct.id === singleProduct.id;
   });
   //If already has one:
   if (productInCart) {
@@ -29,7 +29,7 @@ export const ADD_TO_CART = (state, { singleProduct, quantity }) => {
 // Add Product to favorites VueX state:
 export const ADD_TO_FAVORITE = (state, { singleProduct, quantity }) => {
   let productInFavorite = state.favorites.find((item) => {
-    return item.singleProduct.id === product.id;
+    return item.singleProduct.id === singleProduct.id;
   });
   if (productInFavorite) {
     /*====TODO: REMOVE FROM FAVORITES❗❗ 
