@@ -12,7 +12,7 @@
     <h3 class="price">{{ price }}</h3>
     <span class="title">{{ name }}</span>
 
-    <button class="button cartBtn">
+    <button class="button cartBtn" @click="addToCart()">
       <Icon icon="mdi:cart-outline" />
     </button>
 
@@ -33,9 +33,14 @@
 
 <script>
 import { Icon } from '@iconify/vue';
+import { mapActions } from 'vuex';
 
 export default {
   props: {
+    ['product']: {
+      type: Object,
+      required: true
+    },
     name: {
       type: String,
       required: true
@@ -46,6 +51,10 @@ export default {
     },
     price: {
       type: String || Number,
+      required: true
+    },
+    quantity: {
+      type: Number,
       required: true
     },
     description: {
@@ -64,6 +73,13 @@ export default {
     closeModal() {
       const modalViews = document.getElementById('open-modal');
       modalViews.classList.remove('activeModal');
+    },
+    ...mapActions(['addCart']),
+    addToCart() {
+      this.addCart({
+        product: this.product,
+        quantity: this.quantity
+      });
     }
   }
 };
