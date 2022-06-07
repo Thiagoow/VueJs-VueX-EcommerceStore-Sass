@@ -28,7 +28,7 @@ export const ADD_TO_CART = (state, { product, quantity }) => {
 };
 
 // Add Product to favorites API route & VueX state:
-export const ADD_TO_FAVORITE = (state, { product, quantity }) => {
+export const ADD_TO_FAVORITE = (state, { product }) => {
   let productInFavorite = state.favorites.find((item) => {
     return item.product.id === product.id;
   });
@@ -38,8 +38,7 @@ export const ADD_TO_FAVORITE = (state, { product, quantity }) => {
     return;
   }
   state.favorites.push({
-    product,
-    quantity
+    product
   });
 };
 
