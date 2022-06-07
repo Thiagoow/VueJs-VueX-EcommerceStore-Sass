@@ -1,20 +1,37 @@
 <template>
   <div class="cardContainer grid">
     <HomeCard
-      name="Fulano Ciclano"
-      imgUrl="https://picsum.photos/seed/nomeProduto/536/354"
-      price="R$ 15,00"
-      description="Fulano Ciclano random description. Lorem ipsum dolor."
+      v-for="i in products"
+      :product="i"
+      :key="i.id"
+      :id="i.id"
+      :name="i.name"
+      :imgUrl="i.imgUrl"
+      :price="i.price"
+      :quantity="i.quantity"
+      :description="i.description"
     />
   </div>
 </template>
 
 <script>
 import HomeCard from './HomeCard.vue';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   components: {
     HomeCard
+  },
+  computed: {
+    ...mapState(['products'])
+  },
+  mounted() {
+    /* When app is initialized, get 
+    all items from products API route: */
+    this.getProducts();
+  },
+  methods: {
+    ...mapActions(['getProducts'])
   }
 };
 </script>
