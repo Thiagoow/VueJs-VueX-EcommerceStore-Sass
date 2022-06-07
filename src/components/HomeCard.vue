@@ -5,7 +5,7 @@
     </div>
 
     <img :src="imgUrl" alt="random image" class="img" />
-    <button class="favoriteBtn">
+    <button class="favoriteBtn" @click="addToFavorite()">
       <Icon icon="mdi:cards-heart-outline" />
     </button>
 
@@ -90,11 +90,16 @@ export default {
       const modalViews = document.getElementById('open-modal');
       modalViews.classList.remove('activeModal');
     },
-    ...mapActions(['addCart']),
+    ...mapActions(['addCart', 'addFavorite']),
     addToCart() {
       this.addCart({
         product: this.product,
         quantity: this.quantity
+      });
+    },
+    addToFavorite() {
+      this.addFavorite({
+        product: this.product
       });
     }
   }
