@@ -2,9 +2,13 @@
   <main>
     <section class="favoritesContainer">
       <FavoriteCard
-        name="Fulano Ciclano"
-        imgUrl="https://picsum.photos/seed/nomeProduto/536/354"
-        description="Fulano Ciclano random description. Lorem ipsum dolor."
+        v-for="i in favorites"
+        :product="i"
+        :key="i.product.id"
+        :id="i.product.id"
+        :name="i.product.name"
+        :imgUrl="i.product.imgUrl"
+        :description="i.product.description"
       />
     </section>
   </main>
@@ -12,10 +16,23 @@
 
 <script>
 import FavoriteCard from '../components/FavoriteCard.vue';
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
   components: {
     FavoriteCard
+  },
+  computed: {
+    ...mapState(['favorites']),
+    ...mapGetters(['favoritesItemCount'])
+  },
+  mounted() {
+    /* When app is initialized, get 
+    all items from favorites API route: */
+    this.getFavoriteItems();
+  },
+  methods: {
+    ...mapActions(['getFavoriteItems', 'clearFavorites'])
   }
 };
 </script>
