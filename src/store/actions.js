@@ -49,16 +49,17 @@ export const getFavoriteItems = ({ commit }) => {
 };
 
 // Delete a single product from cart
-export const removeCart = ({ commit }, product) => {
-  commit('REMOVE_CART', product); //👈🏽 Delete from VueX state
-  Cart.delete(product.id);
-  //☝🏽 Delete by his ID in cart route
+export const removeCart = ({ commit }, id) => {
+  commit('REMOVE_CART', id); //👈🏽 Delete from VueX state
+  //Delete by his ID in cart route:
+  Cart.delete(id);
+  //☝🏽 Or it could be product.id
 };
 
 // Delete a single product from favorites
-export const removeFavorite = ({ commit }, product) => {
-  commit('REMOVE_FAVORITE', product);
-  Cart.delete(product.id);
+export const removeFavorite = ({ commit }, id) => {
+  commit('REMOVE_FAVORITE', id);
+  Cart.delete(id);
 };
 
 // Delete all products from cart array
