@@ -4,15 +4,15 @@ import Favorites from '../api/Favorites';
 
 // Get all products from API
 export const getProducts = ({ commit }) => {
-  Products.all().then((res) => {
-    commit('GET_PRODUCTS', res.data);
+  Products.all().then((response) => {
+    commit('GET_PRODUCTS', response.data);
   });
 };
 
 // Get a product by his id
 export const getProduct = ({ commit }, productId) => {
-  Products.show(productId).then((res) => {
-    commit('GET_PRODUCT', res.data);
+  Products.show(productId).then((response) => {
+    commit('GET_PRODUCT', response.data);
   });
 };
 
@@ -36,15 +36,15 @@ export const addFavorite = ({ commit }, { product }) => {
 
 // Get all products in cart route
 export const getCartItems = ({ commit }) => {
-  Cart.all().then((res) => {
-    commit('GET_CART', res.data);
+  Cart.all().then((response) => {
+    commit('GET_CART', response.data);
   });
 };
 
 // Get all products in favorites route
 export const getFavoriteItems = ({ commit }) => {
-  Favorites.all().then((res) => {
-    commit('GET_FAVORITES', res.data);
+  Favorites.all().then((response) => {
+    commit('GET_FAVORITES', response.data);
   });
 };
 
