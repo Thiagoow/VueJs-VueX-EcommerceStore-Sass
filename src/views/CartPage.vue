@@ -3,6 +3,7 @@
     <section class="productsContainer">
       <ProductCard
         v-for="i in cart"
+        :product="i.product"
         :key="i.product.id"
         :id="i.product.id"
         :name="i.product.name"
