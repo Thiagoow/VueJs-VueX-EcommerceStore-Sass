@@ -27,6 +27,8 @@
     <button class="removeBtn btns">
       <Icon icon="mdi:selection-ellipse-remove" />
     </button>
+
+    <p class="quantityLabel">{{ quantity }}x</p>
   </article>
 </template>
 
@@ -45,6 +47,10 @@ export default {
     },
     price: {
       type: String || Number,
+      required: true
+    },
+    quantity: {
+      type: Number || String,
       required: true
     },
     description: {
@@ -198,5 +204,16 @@ export default {
   &:hover {
     color: $alt-second-color;
   }
+}
+
+.quantityLabel {
+  position: absolute;
+  width: 3rem;
+  top: 0rem;
+  right: 0rem;
+
+  text-align: center;
+  box-shadow: 0 4px 14px $shadow-color;
+  border-radius: $border-inside-radius;
 }
 </style>
