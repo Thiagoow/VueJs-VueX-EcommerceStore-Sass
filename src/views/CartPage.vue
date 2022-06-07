@@ -5,6 +5,7 @@
         name="Fulano Ciclano"
         imgUrl="https://picsum.photos/seed/nomeProduto/536/354"
         price="R$ 15,00"
+        quantity="1"
         description="Fulano Ciclano random description. Lorem ipsum dolor."
       />
     </section>
