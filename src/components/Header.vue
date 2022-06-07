@@ -135,11 +135,17 @@ export default {
     }
   }
   .navLogo {
-    margin-left: 4rem;
+    margin-left: 5rem;
     font-weight: $wgt-semi-bold;
 
     @media screen and (max-width: 445px) {
-      margin-left: $mg-2;
+      margin-left: -4rem;
+    }
+    @media screen and (max-width: 355px) {
+      margin-left: -2rem;
+    }
+    @media screen and (max-width: 336px) {
+      margin-left: -1.5rem;
     }
   }
 
@@ -153,7 +159,7 @@ export default {
       margin-left: $mg-3;
 
       @media screen and (max-width: 445px) {
-        margin-left: $mg-2;
+        margin-left: $mg-1-5;
       }
     }
   }
