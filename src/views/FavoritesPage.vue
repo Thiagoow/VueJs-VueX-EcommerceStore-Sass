@@ -34,9 +34,9 @@ export default {
     ...mapGetters(['favoritesItemCount'])
   },
   mounted() {
-    /* When app is initialized, get 
-    all items from favorites API route: */
-    this.getFavoriteItems();
+    this.getFavoriteItems(this.favorites);
+    /* ❗ IF USING localActions:
+    Add this.favorites inside of () */
   },
   methods: {
     ...mapActions(['getFavoriteItems', 'clearFavorites'])

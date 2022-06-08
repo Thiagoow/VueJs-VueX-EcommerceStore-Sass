@@ -42,9 +42,9 @@ export default {
     ...mapGetters(['cartTotalPrice'])
   },
   mounted() {
-    /* When app is initialized, get
-    all items from cart API route: */
-    this.getCartItems();
+    this.getCartItems(this.cart);
+    /* ❗ IF USING localActions:
+    Add this.cart inside of () */
   },
 
   methods: {

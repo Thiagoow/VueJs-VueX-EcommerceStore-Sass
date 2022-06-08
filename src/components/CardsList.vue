@@ -26,13 +26,12 @@ export default {
     ...mapState(['products'])
   },
   mounted() {
-    this.getLocalProducts(this.products);
-    /* When app is initialized, get 
-    all items from products API route: 
-    this.getProducts(); */
+    this.getProducts(this.products);
+    /* ❗ IF USING localActions:
+    Add this.products inside of () */
   },
   methods: {
-    ...mapActions(['getLocalProducts'])
+    ...mapActions(['getProducts'])
   }
 };
 </script>
