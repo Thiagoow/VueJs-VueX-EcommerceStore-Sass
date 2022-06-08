@@ -5,10 +5,10 @@
     <div class="productDetails">
       <span class="name">
         {{ name }}
-        <b>~ {{ ConvertToReal }}</b>
+        <b>~ {{ calcProductPrice }}</b>
       </span>
 
-      <p class="price">{{ ConvertToReal }}</p>
+      <p class="price">{{ calcProductPrice }}</p>
       <p class="description">
         {{ description }}
       </p>
@@ -17,12 +17,12 @@
     <div class="moreMinusBtns">
       <button
         class="increaseBtn btns"
-        @click.prevent="$event.stopPropagation(addToCart())"
+        @click.prevent="$event.stopPropagation(increaseQuantity())"
       >
         <Icon icon="mdi:plus" />
       </button>
 
-      <button class="decreaseBtn btns">
+      <button class="decreaseBtn btns" @click="decreaseQuantity()">
         <Icon icon="mdi:minus" />
       </button>
     </div>
@@ -34,7 +34,7 @@
       <Icon icon="mdi:selection-ellipse-remove" />
     </button>
 
-    <p class="quantityLabel">{{ quantity }}x</p>
+    <p class="quantityLabel">{{ product.quantity }}x</p>
   </article>
 </template>
 
@@ -65,7 +65,7 @@ export default {
       required: true
     },
     quantity: {
-      type: Number || String,
+      type: Number,
       required: true
     },
     description: {
@@ -77,15 +77,19 @@ export default {
     Icon
   },
   data() {
-    const priceInBrl = Math.abs(this.price);
+    let pQuantity = this.quantity;
+    let pPrice = Math.abs(this.price);
     //☝🏽 Math.abs() -> Convert number to positive
     return {
-      priceInBrl
+      pPrice,
+      pQuantity
     };
   },
   computed: {
-    ConvertToReal() {
-      return this.priceInBrl.toLocaleString('pt-BR', {
+    calcProductPrice() {
+      let totalPrice = this.pPrice * this.pQuantity;
+
+      return totalPrice.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2
@@ -96,9 +100,21 @@ export default {
     ...mapActions(['addCart', 'clearCart', 'removeCart']),
     addToCart() {
       this.addCart({
-        product: this.item,
-        quantity: this.quantity
+        product: this.product,
+        quantity: this.pQuantity
       });
+    },
+    increaseQuantity() {
+      if (this.pQuantity < 10) {
+        this.pQuantity++;
+        this.product.quantity = this.pQuantity;
+      }
+    },
+    decreaseQuantity() {
+      if (this.pQuantity > 1) {
+        this.pQuantity--;
+        this.product.quantity = this.pQuantity;
+      }
     }
   }
 };
@@ -200,7 +216,7 @@ export default {
   }
   .name b,
   .price {
-    color: #0062be;
+    color: $third-color;
     font-size: $txt-font-size;
     font-weight: $wgt-semi-bold;
   }
