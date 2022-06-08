@@ -10,6 +10,13 @@
         :imgUrl="i.product.imgUrl"
         :description="i.product.description"
       />
+
+      <button
+        class="button"
+        @click.prevent="$event.stopPropagation(clearFavorites())"
+      >
+        Limpar favoritos
+      </button>
     </section>
   </main>
 </template>
@@ -45,5 +52,21 @@ export default {
   display: flex;
   background-color: $body-color;
   flex-direction: column;
+}
+
+.button {
+  margin-top: 1rem;
+  align-self: center;
+
+  @media screen and (max-width: 424px) {
+    margin-top: 1.5rem;
+    align-self: center;
+  }
+  @media screen and (max-width: 612px) {
+    margin-top: 2rem;
+  }
+  @media screen and (min-width: 768px) {
+    margin-top: 3rem;
+  }
 }
 </style>
