@@ -1,10 +1,18 @@
 //Get all items in cart from VueX state:
 export const cartItemCount = (state) => {
-  return state.cart.length;
+  if (state.cart) {
+    return state.cart.length;
+  } else {
+    return 0;
+  }
 };
 //Get all items in favorites from VueX state:
 export const favoritesItemCount = (state) => {
-  return state.favorites.length;
+  if (state.favorites) {
+    return state.favorites.length;
+  } else {
+    return 0;
+  }
 };
 
 //Get total price from products on cart:
