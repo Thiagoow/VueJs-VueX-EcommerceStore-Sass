@@ -10,7 +10,7 @@
       <div class="navMenu" id="nav-menu">
         <ul class="navList">
           <li class="navItem">
-            <a href="" class="navLink activeLink">Home</a>
+            <a href="/" class="navLink activeLink">Home</a>
           </li>
           <li class="navItem">
             <a href="" class="navLink">Produtos</a>

@@ -72,5 +72,5 @@ export const clearCart = ({ commit }) => {
 // Delete all products from favorites array
 export const clearFavorites = ({ commit }) => {
   commit('CLEAR_FAVORITES');
-  Cart.deleteAll();
+  Favorites.deleteAll();
 };
