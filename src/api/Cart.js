@@ -21,7 +21,7 @@ export default {
     return axios.delete(`${END_POINT}/${id}`, headers);
   },
 
-  deleteAll() {
-    return axios.delete(END_POINT, headers);
+  deleteAll(arrayIds) {
+    return axios.delete(`${END_POINT}/${arrayIds}`, headers);
   }
 };

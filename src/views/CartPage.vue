@@ -20,7 +20,7 @@
 
         <button
           class="button"
-          @click.prevent="$event.stopPropagation(clearCart())"
+          @click.prevent="$event.stopPropagation(clearItemsCart())"
         >
           Limpar carrinho
         </button>
@@ -46,7 +46,13 @@ export default {
     all items from cart API route: */
     this.getCartItems();
   },
+  data() {
+    let arrayIds = [];
 
+    return {
+      arrayIds
+    };
+  },
   methods: {
     ...mapActions(['getCartItems', 'clearCart']),
     totalPriceInBRL() {
@@ -57,6 +63,13 @@ export default {
         currency: 'BRL',
         minimumFractionDigits: 2
       });
+    },
+    clearItemsCart() {
+      this.cart.forEach((i) => {
+        this.arrayIds.push(i.id);
+      });
+      //console.log(this.arrayIds);
+      this.clearCart(this.arrayIds);
     }
   }
 };
