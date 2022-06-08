@@ -1,6 +1,6 @@
-//import Cart from '../api/Cart';
+import Cart from '../api/Cart';
 import Products from '../api/Products';
-//import Favorites from '../api/Favorites';
+import Favorites from '../api/Favorites';
 
 // Get all products from API
 export const getProducts = ({ commit }) => {
@@ -9,16 +9,20 @@ export const getProducts = ({ commit }) => {
   });
 };
 
-// Generate products to VueX state:
-export const addLocalProducts = ({ commit }, productsArray) => {
-  commit('ADD_LOCAL_PRODUCTS', productsArray);
-};
-
 // Get a product by his id
 export const getProduct = ({ commit }, productId) => {
   Products.show(productId).then((response) => {
     commit('GET_PRODUCT', response.data);
   });
+};
+
+// Generate products to VueX state:
+export const addLocalProducts = ({ commit }, productsArray) => {
+  commit('ADD_LOCAL_PRODUCTS', productsArray);
+};
+// Get local products from VueX state:
+export const getLocalProducts = ({ commit }, localProducts) => {
+  commit('GET_LOCAL_PRODUCTS', localProducts);
 };
 
 // Add a product to cart array
