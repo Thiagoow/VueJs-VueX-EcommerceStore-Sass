@@ -16,40 +16,36 @@ export const ADD_LOCAL_PRODUCTS = (state, productsArray) => {
 
 // Add Product to cart API route & VueX state:
 export const ADD_TO_CART = (state, { product, quantity }) => {
-  if (state.cart) {
-    // Check if product already exists in cart:
-    let productInCart = state.cart.find((item) => {
-      return item.product.id === product.id;
-    });
-    //If already has one:
-    if (productInCart) {
-      productInCart.quantity += quantity;
-      return;
-    }
-    //Else, push the product:
-    state.cart.push({
-      product,
-      quantity
-    });
+  // Check if product already exists in cart:
+  let productInCart = state.cart.find((item) => {
+    return item.product.id === product.id;
+  });
+  //If already has one:
+  if (productInCart) {
+    productInCart.quantity += quantity;
+    return;
   }
+  //Else, push the product:
+  state.cart.push({
+    product,
+    quantity
+  });
 };
 
 // Add Product to favorites API route & VueX state:
 export const ADD_TO_FAVORITE = (state, { product }) => {
-  if (state.favorites) {
-    const alreadyOnFavorite = state.favorites.find((item) => {
-      return item.product.id === product.id;
-    });
-    //Keep on state only the items that weren't on favorites before:
-    state.favorites = state.favorites.filter((item) => {
-      return item.product.id !== product.id;
-    });
+  const alreadyOnFavorite = state.favorites.find((item) => {
+    return item.product.id === product.id;
+  });
+  //Keep on state only the items that weren't on favorites before:
+  state.favorites = state.favorites.filter((item) => {
+    return item.product.id !== product.id;
+  });
 
-    if (!alreadyOnFavorite) {
-      state.favorites.push({
-        product
-      });
-    }
+  if (!alreadyOnFavorite) {
+    state.favorites.push({
+      product
+    });
   }
 };
 
