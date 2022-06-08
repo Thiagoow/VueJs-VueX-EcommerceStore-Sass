@@ -1,7 +1,7 @@
 //States of the application:
 export default {
-  cart: [],
+  cart: [0],
   products: [],
-  favorites: [],
+  favorites: [0],
   singleProduct: null
 };
