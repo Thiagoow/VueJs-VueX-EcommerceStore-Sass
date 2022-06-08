@@ -22,7 +22,7 @@ export default {
   position: relative;
   font-size: $h2-font-size;
   color: $title-color;
-  margin-bottom: $mg-2-5;
+  margin-bottom: $mg-1-5;
   text-align: center;
 
   &:after {
