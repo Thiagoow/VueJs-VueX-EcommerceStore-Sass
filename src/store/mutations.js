@@ -3,15 +3,19 @@ export const GET_PRODUCTS = (state, products) => {
   state.products = products;
 };
 
-// Generate products locally to VueX state:
-export const ADD_LOCAL_PRODUCTS = (state, productsArray) => {
-  state.products = productsArray;
-};
-
 /* Get a specific product from API and
  insert on VueX singleProduct state: */
 export const GET_PRODUCT = (state, singleProduct) => {
   state.singleProduct = singleProduct;
+};
+
+// Generate products locally to VueX state:
+export const ADD_LOCAL_PRODUCTS = (state, productsArray) => {
+  state.products = productsArray;
+};
+// Get local products from VueX state:
+export const GET_LOCAL_PRODUCTS = (state, localProducts) => {
+  state.products = localProducts;
 };
 
 // Add Product to cart API route & VueX state:
