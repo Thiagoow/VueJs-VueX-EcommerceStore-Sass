@@ -6,7 +6,7 @@
 
     <img :src="imgUrl" alt="random image" class="img" />
     <button class="favoriteBtn" @click="addToFavorite()">
-      <Icon icon="mdi:cards-heart-outline" />
+      <Icon :icon="isFilled ? 'mdi:cards-heart' : 'mdi:cards-heart-outline'" />
     </button>
 
     <h3 class="price">{{ ConvertToReal }}</h3>
@@ -69,7 +69,8 @@ export default {
     const priceInBrl = Math.abs(this.price);
     //☝🏽 Math.abs() -> Convert number to positive
     return {
-      priceInBrl
+      priceInBrl,
+      isFilled: false
     };
   },
   computed: {
@@ -97,7 +98,12 @@ export default {
         quantity: this.quantity
       });
     },
+    fillFavoriteIcon() {
+      this.isFilled = !this.isFilled;
+    },
     addToFavorite() {
+      //this.fillFavoriteIcon();
+
       this.addFavorite({
         product: this.product
       });
