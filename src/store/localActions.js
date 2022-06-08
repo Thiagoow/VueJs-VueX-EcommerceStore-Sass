@@ -24,17 +24,13 @@ export const addFavorite = ({ commit }, { product }) => {
 };
 
 // Get all products in cart route
-export const getCartItems = ({ commit }) => {
-  /*Cart.all().then((response) => {
-    commit('GET_CART', response.data);
-  });*/
+export const getCartItems = ({ commit }, cartArray) => {
+  commit('GET_CART', cartArray);
 };
 
 // Get all products in favorites route
-export const getFavoriteItems = ({ commit }) => {
-  /*Favorites.all().then((response) => {
-    commit('GET_FAVORITES', response.data);
-  });*/
+export const getFavoriteItems = ({ commit }, favoritesArray) => {
+  commit('GET_FAVORITES', favoritesArray);
 };
 
 // Delete a single product from cart
