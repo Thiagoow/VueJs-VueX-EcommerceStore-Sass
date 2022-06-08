@@ -156,7 +156,7 @@ export default {
     font-size: calc($h2-font-size + 0.2rem);
 
     .shopIcon {
-      margin-left: $mg-3;
+      margin-left: $mg-2;
 
       @media screen and (max-width: 445px) {
         margin-left: $mg-1-5;
