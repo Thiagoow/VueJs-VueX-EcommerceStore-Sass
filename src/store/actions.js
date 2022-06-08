@@ -62,11 +62,11 @@ export const removeFavorite = ({ commit }, product) => {
 };
 
 // Delete all products from cart array
-export const clearCart = ({ commit }, arrayIds) => {
+export const clearCart = ({ commit }) => {
   // Clear all items from cart VueX state:
   commit('CLEAR_CART');
   // Clear all from cart API route:
-  Cart.deleteAll(arrayIds);
+  Cart.deleteAll();
 };
 
 // Delete all products from favorites array
