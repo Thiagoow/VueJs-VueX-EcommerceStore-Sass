@@ -1,6 +1,6 @@
 // Get local products from VueX state:
-export const getLocalProducts = ({ commit }, localProducts) => {
-  commit('GET_LOCAL_PRODUCTS', localProducts);
+export const getProducts = ({ commit }, localProducts) => {
+  commit('GET_PRODUCTS', localProducts);
 };
 
 // Get a product by his id
@@ -15,7 +15,7 @@ export const addLocalProducts = ({ commit }, productsArray) => {
 
 // Add a product to cart array
 export const addCart = ({ commit }, { product, quantity }) => {
-  commit('ADD_TO_CART', { product, quantity }); //👈🏽 Add to VueX state
+  commit('ADD_TO_CART', { product, quantity });
 };
 
 // Add a product to favorites array
