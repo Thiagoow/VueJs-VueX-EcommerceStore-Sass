@@ -1,6 +1,6 @@
-import Cart from '../api/Cart';
+//import Cart from '../api/Cart';
 import Products from '../api/Products';
-import Favorites from '../api/Favorites';
+//import Favorites from '../api/Favorites';
 
 // Get all products from API
 export const getProducts = ({ commit }) => {
@@ -9,9 +9,9 @@ export const getProducts = ({ commit }) => {
   });
 };
 
-// Generate products locally to VueX state:
-export const addLocalProducts = ({ commit }) => {
-  commit('ADD_LOCAL_PRODUCTS');
+// Generate products to VueX state:
+export const addLocalProducts = ({ commit }, productsArray) => {
+  commit('ADD_LOCAL_PRODUCTS', productsArray);
 };
 
 // Get a product by his id
@@ -78,9 +78,4 @@ export const clearCart = ({ commit }) => {
 export const clearFavorites = ({ commit }) => {
   commit('CLEAR_FAVORITES');
   Favorites.deleteAll();
-};
-
-export const clearProducts = ({ commit }) => {
-  commit('CLEAR_PRODUCTS');
-  Products.deleteAll();
 };
