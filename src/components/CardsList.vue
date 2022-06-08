@@ -26,7 +26,9 @@ export default {
     ...mapState(['products'])
   },
   mounted() {
-    this.clearAllRoutes();
+    //Because running locally:
+    this.clearCart();
+    this.clearFavorites();
 
     this.getProducts(this.products);
     /* ❗ IF USING localActions:
@@ -38,12 +40,7 @@ export default {
       'clearCart',
       'clearProducts',
       'clearFavorites'
-    ]),
-    clearAllRoutes() {
-      this.clearProducts();
-      this.clearCart();
-      this.clearFavorites();
-    }
+    ])
   }
 };
 </script>

@@ -102,7 +102,8 @@ export default {
       this.isFilled = !this.isFilled;
     },
     addToFavorite() {
-      //this.fillFavoriteIcon();
+      //Because running locally:
+      this.fillFavoriteIcon();
 
       this.addFavorite({
         product: this.product
