@@ -29,31 +29,19 @@ export const ADD_TO_CART = (state, { product, quantity }) => {
 
 // Add Product to favorites API route & VueX state:
 export const ADD_TO_FAVORITE = (state, { product }) => {
-  let productInFavorite = state.favorites.find((item) => {
+  const alreadyOnFavorite = state.favorites.find((item) => {
     return item.product.id === product.id;
   });
-
-  if (productInFavorite) {
-    const sameProductsInFavorite = new Array(state.favorites.length);
-    //Put on array every product with the same id:
-    for (let i = 0; i < sameProductsInFavorite.length; i++) {
-      if (state.favorites[i].product.id === product.id) {
-        sameProductsInFavorite[i] = state.favorites[i];
-      }
-    }
-
-    for (let i = 0; i < sameProductsInFavorite.length; i++) {
-      //Delete from VueX state:
-      state.favorites.splice(productInFavorite, 1);
-      //Delete from API:
-      state.favorites.delete(productInFavorite.id);
-    }
-    return;
-  }
-
-  state.favorites.push({
-    product
+  //Keep on state only the items that weren't on favorites before:
+  state.favorites = state.favorites.filter((item) => {
+    return item.product.id !== product.id;
   });
+
+  if (!alreadyOnFavorite) {
+    state.favorites.push({
+      product
+    });
+  }
 };
 
 // Get all items in cart route & insert on VueX state:
@@ -68,10 +56,6 @@ export const GET_FAVORITES = (state, favorites) => {
 
 // Remove from cart in state & API:
 export const REMOVE_CART = (state, singleProduct) => {
-  /* state.cart = state.cart.filter((item) => {
-    return item.singleProduct.id !== singleProduct.id;
-  }); */
-
   state.cart.splice(singleProduct, 1);
 };
 
