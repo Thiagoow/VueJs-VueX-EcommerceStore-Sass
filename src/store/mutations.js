@@ -3,6 +3,11 @@ export const GET_PRODUCTS = (state, products) => {
   state.products = products;
 };
 
+// Generate products locally to VueX state:
+export const ADD_LOCAL_PRODUCTS = (state, products) => {
+  state.products = products;
+};
+
 /* Get a specific product from API and
  insert on VueX singleProduct state: */
 export const GET_PRODUCT = (state, singleProduct) => {
