@@ -68,7 +68,13 @@ export const REMOVE_FAVORITE = (state, singleProduct) => {
 export const CLEAR_CART = (state) => {
   state.cart = [];
 };
+
 // Clear/remove all products from favorites state & API:
 export const CLEAR_FAVORITES = (state) => {
   state.favorites = [];
+};
+
+// Clear/remove all products from products state & API:
+export const CLEAR_PRODUCTS = (state) => {
+  state.products = [];
 };
