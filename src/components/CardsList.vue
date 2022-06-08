@@ -26,12 +26,24 @@ export default {
     ...mapState(['products'])
   },
   mounted() {
+    this.clearAllRoutes();
+
     this.getProducts(this.products);
     /* ❗ IF USING localActions:
     Add this.products inside of () */
   },
   methods: {
-    ...mapActions(['getProducts'])
+    ...mapActions([
+      'getProducts',
+      'clearCart',
+      'clearProducts',
+      'clearFavorites'
+    ]),
+    clearAllRoutes() {
+      this.clearProducts();
+      this.clearCart();
+      this.clearFavorites();
+    }
   }
 };
 </script>
