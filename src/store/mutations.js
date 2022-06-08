@@ -4,8 +4,8 @@ export const GET_PRODUCTS = (state, products) => {
 };
 
 // Generate products locally to VueX state:
-export const ADD_LOCAL_PRODUCTS = (state, products) => {
-  state.products = products;
+export const ADD_LOCAL_PRODUCTS = (state, productsArray) => {
+  state.products = productsArray;
 };
 
 /* Get a specific product from API and
