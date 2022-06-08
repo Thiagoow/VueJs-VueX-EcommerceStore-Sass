@@ -123,7 +123,7 @@ export default {
 
       height: 100vh;
       padding: 2rem;
-      background-color: $alt-first-color;
+      background-color: #222;
       transition: 0.5s;
     }
   }
