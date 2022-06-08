@@ -12,7 +12,12 @@ export default {
   all() {
     return axios.get(END_POINT, headers);
   },
+
   show(id) {
     return axios.get(`${END_POINT}/${id}`, headers);
+  },
+
+  deleteAll() {
+    return axios.delete(END_POINT, headers);
   }
 };
