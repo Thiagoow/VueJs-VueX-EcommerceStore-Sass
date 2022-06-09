@@ -77,12 +77,12 @@ export default {
     width: 60%;
   }
   @media screen and (max-width: 457px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 50%;
 
     .deleteAll {
       margin-right: 0 !important;
-      margin-bottom: $mg-1;
+      margin-top: $mg-1;
     }
 
     .button {
