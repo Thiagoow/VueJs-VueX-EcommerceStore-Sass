@@ -1,6 +1,6 @@
 <template>
   <article class="card">
-    <div class="cardOverlay" @click="openModal">
+    <div class="cardOverlay" @click="toggleModal()">
       <button class="button">Descrição</button>
     </div>
 
@@ -16,9 +16,13 @@
       <Icon icon="mdi:cart-outline" />
     </button>
 
-    <div id="open-modal" class="modal">
+    <div v-if="modalOpen" class="modal">
       <div class="content">
-        <button @click="closeModal" title="Fechar modal" class="closeModalBtn">
+        <button
+          @click="toggleModal()"
+          title="Fechar modal"
+          class="closeModalBtn"
+        >
           <Icon icon="mdi:window-close" />
         </button>
 
@@ -70,7 +74,8 @@ export default {
     //☝🏽 Math.abs() -> Convert number to positive
     return {
       priceInBrl,
-      isFilled: false
+      isFilled: false,
+      modalOpen: false
     };
   },
   computed: {
@@ -83,15 +88,10 @@ export default {
     }
   },
   methods: {
-    openModal() {
-      const modalViews = document.getElementById('open-modal');
-      modalViews.classList.add('activeModal');
-    },
-    closeModal() {
-      const modalViews = document.getElementById('open-modal');
-      modalViews.classList.remove('activeModal');
-    },
     ...mapActions(['addCart', 'addFavorite']),
+    toggleModal() {
+      this.modalOpen = !this.modalOpen;
+    },
     addToCart() {
       this.addCart({
         product: this.product,
@@ -200,15 +200,12 @@ export default {
   position: fixed;
   inset: 0;
   z-index: $z-modal;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   transition: all 0.3s;
   background-color: $shadow-color;
 }
-.activeModal {
-  visibility: visible;
-  opacity: 1;
-}
+
 .modal .content {
   width: 25rem;
   position: absolute;
