@@ -109,7 +109,10 @@ function generateRandomData() {
 
   const rImg = `https://picsum.photos/seed/${nameNoSpaces}/536/354`;
   const rDesc = `${rName} random description. Lorem ipsum dolor.`;
-  const rPrice = 10 + rName.length * ((rDesc.length - 5) / rName.length - 3);
+  //👇🏽 Math.abs() -> Convert number to positive
+  const rPrice = Math.abs(
+    10 + rName.length * ((rDesc.length - 5) / rName.length - 3)
+  );
 
   const randomProduct = {
     name: rName,
