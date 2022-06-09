@@ -77,7 +77,7 @@ export default {
     width: 60%;
   }
   @media screen and (max-width: 457px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 50%;
 
     .deleteAll {
