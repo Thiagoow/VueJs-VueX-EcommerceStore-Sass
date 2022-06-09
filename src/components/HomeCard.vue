@@ -70,8 +70,7 @@ export default {
     Icon
   },
   data() {
-    const priceInBrl = Math.abs(this.price);
-    //☝🏽 Math.abs() -> Convert number to positive
+    const priceInBrl = this.price;
     return {
       priceInBrl,
       isFilled: false,
