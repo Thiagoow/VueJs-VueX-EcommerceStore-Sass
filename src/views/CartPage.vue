@@ -7,7 +7,7 @@
         :key="i.product.id"
         :id="i.product.id"
         :name="i.product.name"
-        :imgUrl="i.product.imgUrl"
+        :imgUrl="i.product.backdropUrl"
         :price="i.product.price"
         :quantity="1"
         :description="i.product.description"
