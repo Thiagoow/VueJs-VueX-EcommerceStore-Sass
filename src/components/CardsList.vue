@@ -48,21 +48,23 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/scss/abstracts/variables' as *;
 .cardContainer {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  justify-content: center;
+  grid-template-columns: repeat(2, 250px);
+  gap: 3rem;
 
-  @media screen and (max-width: 339px) {
-    grid-template-columns: 150px;
-    justify-content: center;
+  @media screen and (max-width: 590px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 416px) {
+    grid-template-columns: 200px;
   }
   @media screen and (min-width: 767px) {
     grid-template-columns: repeat(3, 200px);
-    justify-content: center;
     gap: 3rem;
   }
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1140px) {
     grid-template-columns: repeat(4, 200px);
-    gap: 2.5rem;
+    gap: 4rem;
     padding-top: 2rem;
   }
 }
