@@ -134,7 +134,7 @@ export default {
   position: relative;
   background-color: $container-color;
   box-shadow: 0 4px 16px $shadow-color;
-  padding: 1.5rem 1rem 1rem;
+  padding: 1.5rem 1.5rem 1rem !important;
   border-radius: 0.75rem;
   overflow: hidden;
 
@@ -149,6 +149,10 @@ export default {
   justify-self: center;
   margin-bottom: $mg-0-75;
   transition: 0.3s;
+
+  @media (min-width: 500px) and (max-width: 767px) {
+    width: 90%;
+  }
 }
 
 .favoriteBtn {
