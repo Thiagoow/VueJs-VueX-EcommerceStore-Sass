@@ -6,7 +6,7 @@
       :key="i.id"
       :id="i.id"
       :name="i.name"
-      :imgUrl="i.imgUrl"
+      :imgUrl="i.posterUrl"
       :price="i.price"
       :quantity="1"
       :description="i.description"
