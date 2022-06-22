@@ -6,8 +6,8 @@ const axiosInstance = axios.create({
   baseURL: 'https://api.themoviedb.org/3'
 });
 
-const productsArray = new Array(6);
-//☝🏽 I just want 6 items on this array
+const productsArray = new Array(7);
+//☝🏽 I just want 7 items on this array
 
 const { data } = await axiosInstance.get(END_POINT);
 const results = data.results;
