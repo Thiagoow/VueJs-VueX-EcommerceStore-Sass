@@ -17,7 +17,8 @@ for (let i = 0; i < productsArray.length; i++) {
   productsArray[i] = {
     id: i + 1,
     name: `${results[i].name}`,
-    imgUrl: `https://image.tmdb.org/t/p/w200${results[i].backdrop_path}`,
+    posterUrl: `https://image.tmdb.org/t/p/w200${results[i].poster_path}`,
+    backdropUrl: `https://image.tmdb.org/t/p/w200${results[i].backdrop_path}`,
     description: `${results[i].overview.substring(0, 80)}...`,
     price: 10 + results[i].vote_average
   };
