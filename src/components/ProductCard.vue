@@ -138,6 +138,7 @@ export default {
   .productImg {
     width: 25%;
     height: auto;
+    align-self: center;
   }
 
   @media screen and (max-width: 421px) {
@@ -228,6 +229,14 @@ export default {
   .description {
     margin-top: $mg-0-5;
     width: 100%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    //☝🏽 Add "..." in the end
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    //☝🏽 Line count
+    -webkit-box-orient: vertical;
   }
 }
 

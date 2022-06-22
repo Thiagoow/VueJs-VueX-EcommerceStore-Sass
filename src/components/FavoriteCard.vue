@@ -72,6 +72,7 @@ export default {
   .favoriteImg {
     width: 25%;
     height: auto;
+    align-self: center;
   }
 
   @media screen and (max-width: 612px) {
@@ -108,6 +109,14 @@ export default {
   .description {
     margin-top: $mg-0-5;
     width: 90%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    //☝🏽 Add "..." in the end
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    //☝🏽 Line count
+    -webkit-box-orient: vertical;
   }
 }
 
