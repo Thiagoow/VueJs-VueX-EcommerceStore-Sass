@@ -66,7 +66,7 @@ export default {
 .btns {
   display: flex;
   justify-content: center;
-  margin-bottom: $mg-1;
+  margin-bottom: $mg-3 !important;
   margin-right: auto;
   margin-left: auto;
 
