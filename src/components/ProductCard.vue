@@ -148,7 +148,7 @@ export default {
   }
   @media screen and (max-width: 437px) {
     .description {
-      display: none;
+      display: none !important;
     }
     .moreMinusBtns {
       margin-right: 1.5rem !important;
