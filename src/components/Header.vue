@@ -5,7 +5,7 @@
         <Icon icon="ic:round-menu" @click="toggleNav" id="nav-toggle" />
       </a>
 
-      <a href="/" class="navLogo">Media Store</a>
+      <a href="/" class="navLogo">Acme Store</a>
 
       <div class="navMenu" id="nav-menu">
         <ul class="navList">
@@ -13,10 +13,20 @@
             <a href="/" class="navLink activeLink">Home</a>
           </li>
           <li class="navItem">
-            <a href="" class="navLink">Produtos</a>
+            <a
+              href="https://www.behance.net/thiagoow"
+              target="_blank"
+              class="navLink"
+              >Produtos</a
+            >
           </li>
           <li class="navItem">
-            <a href="" class="navLink">Sobre</a>
+            <a
+              href="https://github.com/Thiagoow/VueJs-VueX-EcommerceStore-Sass/tree/DOT-DigitalGroup"
+              target="_blank"
+              class="navLink"
+              >Sobre</a
+            >
           </li>
         </ul>
       </div>
