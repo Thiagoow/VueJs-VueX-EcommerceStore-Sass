@@ -9,7 +9,7 @@
 
     <button
       class="button createProducts"
-      @click.prevent="$event.stopPropagation(insertOnAPI())"
+      @click.prevent="$event.stopPropagation(insertOnVueX())"
     >
       Gerar produtos
     </button>
@@ -39,9 +39,9 @@ export default {
     clearAllRoutes() {
       const IDsArray = productsArray.map((product) => product.id);
 
-      this.clearProducts(IDsArray);
-      this.clearCart(IDsArray);
-      this.clearFavorites(IDsArray);
+      this.clearProducts();
+      this.clearCart();
+      this.clearFavorites();
       /* ☝🏽❗ IF USING localActions:
       Remove IDsArray inside of () */
     },
