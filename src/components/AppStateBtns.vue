@@ -66,7 +66,7 @@ export default {
 .btns {
   display: flex;
   justify-content: center;
-  margin-bottom: $mg-1;
+  margin-bottom: $mg-3 !important;
   margin-right: auto;
   margin-left: auto;
 
@@ -74,7 +74,10 @@ export default {
     margin-bottom: $mg-2;
   }
   @media screen and (max-width: 339px) {
-    width: 60%;
+    width: 60% !important;
+  }
+  @media screen and (max-width: 320px) {
+    width: 90% !important;
   }
   @media screen and (max-width: 457px) {
     flex-direction: column-reverse;
