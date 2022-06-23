@@ -20,7 +20,7 @@
 
         <button
           class="button"
-          @click.prevent="$event.stopPropagation(clearCart())"
+          @click.prevent="$event.stopPropagation(clearAllCart())"
         >
           Limpar carrinho
         </button>
@@ -57,6 +57,12 @@ export default {
         currency: 'BRL',
         minimumFractionDigits: 2
       });
+    },
+    clearAllCart() {
+      const IDsArray = productsArray.map((product) => product.id);
+      this.clearFavorites(IDsArray);
+      /* ❗ IF USING localActions:
+      Remove this function & use clearFavorites */
     }
   }
 };

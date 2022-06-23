@@ -13,7 +13,7 @@
 
       <button
         class="button"
-        @click.prevent="$event.stopPropagation(clearFavorites())"
+        @click.prevent="$event.stopPropagation(clearAllFavorites())"
       >
         Limpar favoritos
       </button>
@@ -39,7 +39,13 @@ export default {
     Add this.favorites inside of () */
   },
   methods: {
-    ...mapActions(['getFavoriteItems', 'clearFavorites'])
+    ...mapActions(['getFavoriteItems', 'clearFavorites']),
+    clearAllFavorites() {
+      const IDsArray = productsArray.map((product) => product.id);
+      this.clearFavorites(IDsArray);
+      /* ❗ IF USING localActions:
+      Remove this function & use clearFavorites */
+    }
   }
 };
 </script>
