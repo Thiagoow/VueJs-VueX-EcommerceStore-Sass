@@ -150,7 +150,7 @@ export default {
   margin-bottom: $mg-0-75;
   transition: 0.3s;
 
-  @media (min-width: 500px) and (max-width: 767px) {
+  @media (min-width: 500px) and (max-width: 768px) {
     width: 90%;
   }
 }

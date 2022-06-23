@@ -58,7 +58,7 @@ export default {
   @media screen and (max-width: 416px) {
     grid-template-columns: 240px;
   }
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: repeat(3, 200px);
     gap: 3rem;
   }

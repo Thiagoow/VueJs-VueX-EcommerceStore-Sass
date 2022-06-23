@@ -37,7 +37,7 @@ export default {
     background-color: $title-color;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     margin-top: $mg-1-5 !important;
   }
 }
