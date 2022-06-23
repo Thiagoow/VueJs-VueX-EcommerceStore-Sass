@@ -24,7 +24,6 @@
 <script>
 import FavoriteCard from '../components/FavoriteCard.vue';
 import { mapState, mapGetters, mapActions } from 'vuex';
-import productsArray from '../api/generateProducts';
 
 export default {
   components: {
@@ -40,13 +39,7 @@ export default {
     Add this.favorites inside of () */
   },
   methods: {
-    ...mapActions(['getFavoriteItems', 'clearFavorites']),
-    clearAllFavorites() {
-      const IDsArray = productsArray.map((product) => product.id);
-      this.clearFavorites(IDsArray);
-      /* ❗ IF USING localActions:
-      Remove this function & use clearFavorites */
-    }
+    ...mapActions(['getFavoriteItems', 'clearFavorites'])
   }
 };
 </script>

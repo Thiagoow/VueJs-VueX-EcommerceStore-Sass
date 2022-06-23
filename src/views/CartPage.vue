@@ -32,7 +32,6 @@
 <script>
 import ProductCard from '../components/ProductCard.vue';
 import { mapState, mapGetters, mapActions } from 'vuex';
-import productsArray from '../api/generateProducts';
 
 export default {
   components: {
@@ -57,12 +56,6 @@ export default {
         currency: 'BRL',
         minimumFractionDigits: 2
       });
-    },
-    clearAllCart() {
-      const IDsArray = productsArray.map((product) => product.id);
-      this.clearCart(IDsArray);
-      /* ❗ IF USING localActions:
-      Remove this function & use clearCart */
     }
   }
 };
