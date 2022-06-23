@@ -17,7 +17,9 @@ export default {
     return axios.get(`${END_POINT}/${id}`, headers);
   },
 
-  deleteAll() {
-    return axios.delete(END_POINT, headers);
+  deleteAll(IDsArray) {
+    IDsArray.forEach((id) => {
+      axios.delete(`${END_POINT}/${id}`, headers);
+    });
   }
 };
