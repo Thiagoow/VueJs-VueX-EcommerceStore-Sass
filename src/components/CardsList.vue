@@ -65,7 +65,6 @@ export default {
   @media screen and (min-width: 1140px) {
     grid-template-columns: repeat(4, 200px);
     gap: 4rem;
-    padding-top: 2rem;
   }
 }
 </style>
