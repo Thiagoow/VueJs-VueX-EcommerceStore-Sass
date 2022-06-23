@@ -74,7 +74,10 @@ export default {
     margin-bottom: $mg-2;
   }
   @media screen and (max-width: 339px) {
-    width: 60%;
+    width: 60% !important;
+  }
+  @media screen and (max-width: 320px) {
+    width: 90% !important;
   }
   @media screen and (max-width: 457px) {
     flex-direction: column-reverse;
