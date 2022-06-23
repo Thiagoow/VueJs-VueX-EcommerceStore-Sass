@@ -9,19 +9,22 @@ const axiosInstance = axios.create({
 const productsArray = new Array(7);
 //☝🏽 I just want 7 items on this array
 
-const { data } = await axiosInstance.get(END_POINT);
-const results = data.results;
+async function fetchMediasFromAPI() {
+  const { data } = await axiosInstance.get(END_POINT);
+  const results = data.results;
 
-for (let i = 0; i < productsArray.length; i++) {
-  //Push product object:
-  productsArray[i] = {
-    id: i + 1,
-    name: `${results[i].name}`,
-    posterUrl: `https://image.tmdb.org/t/p/w200${results[i].poster_path}`,
-    backdropUrl: `https://image.tmdb.org/t/p/w200${results[i].backdrop_path}`,
-    description: `${results[i].overview.substring(0, 80)}...`,
-    price: 10.2 + results[i].vote_average
-  };
+  for (let i = 0; i < productsArray.length; i++) {
+    //Push product object:
+    productsArray[i] = {
+      id: i + 1,
+      name: `${results[i].name}`,
+      posterUrl: `https://image.tmdb.org/t/p/w200${results[i].poster_path}`,
+      backdropUrl: `https://image.tmdb.org/t/p/w200${results[i].backdrop_path}`,
+      description: `${results[i].overview.substring(0, 80)}...`,
+      price: 10.2 + results[i].vote_average
+    };
+  }
 }
 
+fetchMediasFromAPI();
 export default productsArray;
