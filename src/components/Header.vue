@@ -138,6 +138,9 @@ export default {
     margin-left: 4.3rem;
     font-weight: $wgt-semi-bold;
 
+    @media screen and (max-width: 320px) {
+      display: none;
+    }
     @media screen and (max-width: 445px) {
       margin-left: -4.3rem;
     }
