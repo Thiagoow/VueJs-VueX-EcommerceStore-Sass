@@ -224,7 +224,7 @@ export default {
   font-size: $normal-font-size;
   width: 100%;
   color: $txt-color;
-  margin-top: 0.8rem;
+  margin-top: $mg-1;
 }
 .closeModalBtn {
   color: #f34747;
