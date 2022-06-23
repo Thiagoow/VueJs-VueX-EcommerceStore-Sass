@@ -5,7 +5,7 @@
         <Icon icon="ic:round-menu" @click="toggleNav" id="nav-toggle" />
       </a>
 
-      <a href="/" class="navLogo">Acme Store</a>
+      <a href="/" class="navLogo">Media Store</a>
 
       <div class="navMenu" id="nav-menu">
         <ul class="navList">
