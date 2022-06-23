@@ -37,14 +37,19 @@ export default {
       'clearFavorites'
     ]),
     clearAllRoutes() {
-      this.clearProducts();
-      this.clearCart();
-      this.clearFavorites();
+      const IDsArray = productsArray.map((product) => product.id);
+
+      this.clearProducts(IDsArray);
+      this.clearCart(IDsArray);
+      this.clearFavorites(IDsArray);
+      /* ☝🏽❗ IF USING localActions:
+      Remove IDsArray */
     },
     insertOnVueX() {
       this.addLocalProducts(productsArray);
     },
     insertOnAPI() {
+      this.clearAllRoutes();
       for (let i = 0; i < productsArray.length; i++) {
         axios
           .post('/products', productsArray[i], headers)
