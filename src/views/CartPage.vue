@@ -20,7 +20,7 @@
 
         <button
           class="button"
-          @click.prevent="$event.stopPropagation(clearAllCart())"
+          @click.prevent="$event.stopPropagation(clearCart())"
         >
           Limpar carrinho
         </button>

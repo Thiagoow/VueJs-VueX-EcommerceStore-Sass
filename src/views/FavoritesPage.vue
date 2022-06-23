@@ -13,7 +13,7 @@
 
       <button
         class="button"
-        @click.prevent="$event.stopPropagation(clearAllFavorites())"
+        @click.prevent="$event.stopPropagation(clearFavorites())"
       >
         Limpar favoritos
       </button>
