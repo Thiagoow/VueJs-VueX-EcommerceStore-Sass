@@ -61,7 +61,7 @@ export default {
   @media screen and (max-width: 290px) {
     grid-template-columns: 150px;
   }
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: repeat(3, 200px);
     padding-top: 2rem;
     gap: 3rem;
