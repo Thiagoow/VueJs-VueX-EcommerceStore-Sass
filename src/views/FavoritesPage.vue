@@ -13,7 +13,7 @@
 
       <button
         class="button"
-        @click.prevent="$event.stopPropagation(clearFavorites())"
+        @click.prevent="$event.stopPropagation(clearAllFavorites())"
       >
         Limpar favoritos
       </button>
@@ -24,6 +24,7 @@
 <script>
 import FavoriteCard from '../components/FavoriteCard.vue';
 import { mapState, mapGetters, mapActions } from 'vuex';
+import productsArray from '../api/generateProducts';
 
 export default {
   components: {
@@ -34,12 +35,18 @@ export default {
     ...mapGetters(['favoritesItemCount'])
   },
   mounted() {
-    this.getFavoriteItems(this.favorites);
+    this.getFavoriteItems();
     /* ❗ IF USING localActions:
     Add this.favorites inside of () */
   },
   methods: {
-    ...mapActions(['getFavoriteItems', 'clearFavorites'])
+    ...mapActions(['getFavoriteItems', 'clearFavorites']),
+    clearAllFavorites() {
+      const IDsArray = productsArray.map((product) => product.id);
+      this.clearFavorites(IDsArray);
+      /* ❗ IF USING localActions:
+      Remove this function & use clearFavorites */
+    }
   }
 };
 </script>

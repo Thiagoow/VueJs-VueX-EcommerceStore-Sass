@@ -26,11 +26,7 @@ export default {
     ...mapState(['products'])
   },
   mounted() {
-    //Because running locally:
-    this.clearCart();
-    this.clearFavorites();
-
-    this.getProducts(this.products);
+    this.getProducts();
     /* ❗ IF USING localActions:
     Add this.products inside of () */
   },

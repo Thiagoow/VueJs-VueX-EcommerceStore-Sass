@@ -20,7 +20,7 @@
 
         <button
           class="button"
-          @click.prevent="$event.stopPropagation(clearCart())"
+          @click.prevent="$event.stopPropagation(clearAllCart())"
         >
           Limpar carrinho
         </button>
@@ -32,6 +32,7 @@
 <script>
 import ProductCard from '../components/ProductCard.vue';
 import { mapState, mapGetters, mapActions } from 'vuex';
+import productsArray from '../api/generateProducts';
 
 export default {
   components: {
@@ -42,11 +43,10 @@ export default {
     ...mapGetters(['cartTotalPrice'])
   },
   mounted() {
-    this.getCartItems(this.cart);
+    this.getCartItems();
     /* ❗ IF USING localActions:
     Add this.cart inside of () */
   },
-
   methods: {
     ...mapActions(['getCartItems', 'clearCart']),
     totalPriceInBRL() {
@@ -57,6 +57,12 @@ export default {
         currency: 'BRL',
         minimumFractionDigits: 2
       });
+    },
+    clearAllCart() {
+      const IDsArray = productsArray.map((product) => product.id);
+      this.clearCart(IDsArray);
+      /* ❗ IF USING localActions:
+      Remove this function & use clearCart */
     }
   }
 };

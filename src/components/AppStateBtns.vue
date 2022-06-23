@@ -9,7 +9,7 @@
 
     <button
       class="button createProducts"
-      @click.prevent="$event.stopPropagation(insertOnVueX())"
+      @click.prevent="$event.stopPropagation(insertOnAPI())"
     >
       Gerar produtos
     </button>
@@ -37,14 +37,20 @@ export default {
       'clearFavorites'
     ]),
     clearAllRoutes() {
-      this.clearProducts();
-      this.clearCart();
-      this.clearFavorites();
+      const IDsArray = productsArray.map((product) => product.id);
+
+      this.clearProducts(IDsArray);
+      this.clearCart(IDsArray);
+      this.clearFavorites(IDsArray);
+      /* ☝🏽❗ IF USING localActions:
+      Remove IDsArray inside of () */
     },
     insertOnVueX() {
       this.addLocalProducts(productsArray);
     },
     insertOnAPI() {
+      this.clearAllRoutes();
+
       for (let i = 0; i < productsArray.length; i++) {
         axios
           .post('/products', productsArray[i], headers)
