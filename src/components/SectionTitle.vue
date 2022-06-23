@@ -1,6 +1,5 @@
 <template>
   <br />
-  <br />
   <h2 class="sectionTitle">{{ title }}</h2>
 </template>
 
@@ -20,6 +19,7 @@ export default {
 
 .sectionTitle {
   position: relative;
+  margin-top: $mg-2-5 !important;
   font-size: $h2-font-size;
   color: $title-color;
   margin-bottom: $mg-1-5;
@@ -35,6 +35,10 @@ export default {
     right: 0;
     margin: auto;
     background-color: $title-color;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-top: $mg-1-5 !important;
   }
 }
 </style>
