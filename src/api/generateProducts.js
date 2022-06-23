@@ -20,7 +20,7 @@ async function fetchMediasFromAPI() {
       name: `${results[i].name}`,
       posterUrl: `https://image.tmdb.org/t/p/w200${results[i].poster_path}`,
       backdropUrl: `https://image.tmdb.org/t/p/w200${results[i].backdrop_path}`,
-      description: `${results[i].overview.substring(0, 80)}...`,
+      description: `${results[i].overview.substring(0, 105)}...`,
       price: 10.2 + results[i].vote_average
     };
   }
