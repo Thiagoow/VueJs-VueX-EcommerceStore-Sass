@@ -13,10 +13,20 @@
             <a href="/" class="navLink activeLink">Home</a>
           </li>
           <li class="navItem">
-            <a href="" class="navLink">Produtos</a>
+            <a
+              href="https://www.behance.net/thiagoow"
+              target="_blank"
+              class="navLink"
+              >Produtos</a
+            >
           </li>
           <li class="navItem">
-            <a href="" class="navLink">Sobre</a>
+            <a
+              href="https://github.com/Thiagoow/VueJs-VueX-EcommerceStore-Sass/tree/master"
+              target="_blank"
+              class="navLink"
+              >Sobre</a
+            >
           </li>
         </ul>
       </div>
