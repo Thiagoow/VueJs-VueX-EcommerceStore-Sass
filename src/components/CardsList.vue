@@ -26,7 +26,7 @@ export default {
     ...mapState(['products'])
   },
   mounted() {
-    this.getProducts();
+    this.getProducts(this.products);
     /* ❗ IF USING localActions:
     Add this.products inside of () */
   },
