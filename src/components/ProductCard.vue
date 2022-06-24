@@ -128,7 +128,7 @@ export default {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: $mg-1;
   margin-bottom: $mg-1-5;
   background-color: $container-color;
@@ -141,6 +141,11 @@ export default {
     align-self: center;
   }
 
+  @media screen and (max-width: 400px) {
+    .productDetails .price {
+      margin-right: 0 !important;
+    }
+  }
   @media screen and (max-width: 421px) {
     .moreMinusBtns {
       margin-left: $mg-1 !important;
@@ -151,7 +156,6 @@ export default {
       display: none !important;
     }
     .moreMinusBtns {
-      margin-right: 1.5rem !important;
       margin-left: $mg-3;
 
       display: flex;
@@ -169,6 +173,7 @@ export default {
 
     .productDetails .price {
       display: flex;
+      margin-right: $mg-3;
     }
   }
   @media screen and (max-width: 469px) {
