@@ -13,6 +13,7 @@ add params to function inside all mounted()
 remove params in function inside all mounted()
 -------------------&&------------------
 change function insertOnVueX to insertOnAPI 
++ change clear functions on Cart & Favorites Page
 + insert IDsArray inside () on clearAllRoutes()
 on AppStateBtns component */
 
