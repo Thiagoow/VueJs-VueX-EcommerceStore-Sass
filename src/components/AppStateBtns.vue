@@ -9,7 +9,7 @@
 
     <button
       class="button createProducts"
-      @click.prevent="$event.stopPropagation(insertOnVueX())"
+      @click.prevent="$event.stopPropagation(insertOnAPI())"
     >
       Gerar produtos
     </button>
@@ -37,11 +37,11 @@ export default {
       'clearFavorites'
     ]),
     clearAllRoutes() {
-      //const IDsArray = productsArray.map((product) => product.id);
+      const IDsArray = productsArray.map((product) => product.id);
 
-      this.clearProducts();
-      this.clearCart();
-      this.clearFavorites();
+      this.clearProducts(IDsArray);
+      this.clearCart(IDsArray);
+      this.clearFavorites(IDsArray);
       /* ☝🏽❗ IF USING localActions:
       Remove IDsArray inside of () */
     },
@@ -50,10 +50,10 @@ export default {
     },
     insertOnAPI() {
       this.clearAllRoutes();
-      //Reload after 2 seconds to show products:
+      //Reload after 1 second to show products:
       setTimeout(function () {
         window.location.reload(1);
-      }, 2000);
+      }, 1000);
 
       for (let i = 0; i < productsArray.length; i++) {
         axios

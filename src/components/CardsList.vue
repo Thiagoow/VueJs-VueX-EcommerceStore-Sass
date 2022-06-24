@@ -26,12 +26,7 @@ export default {
     ...mapState(['products'])
   },
   mounted() {
-    /* Because favorites aren't keeping state,
-    we clear to don't have any bugs */
-    this.clearCart();
-    this.clearFavorites();
-
-    this.getProducts(this.products);
+    this.getProducts();
     /* ❗ IF USING localActions:
     Add this.products inside of () */
   },

@@ -4,7 +4,7 @@ import createPersistedState from 'vuex-persistedstate';
 import state from './state';
 import * as getters from './getters';
 import * as mutations from './mutations';
-import * as actions from './localActions';
+import * as actions from './remoteActions';
 
 /* IF using localActions: 
 add params to function inside all mounted() 

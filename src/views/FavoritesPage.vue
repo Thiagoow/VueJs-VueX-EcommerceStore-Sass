@@ -13,7 +13,7 @@
 
       <button
         class="button"
-        @click.prevent="$event.stopPropagation(clearFavorites())"
+        @click.prevent="$event.stopPropagation(clearAPIFavorites())"
       >
         Limpar favoritos
       </button>
@@ -35,7 +35,7 @@ export default {
     ...mapGetters(['favoritesItemCount'])
   },
   mounted() {
-    this.getFavoriteItems(this.favorites);
+    this.getFavoriteItems();
     /* ❗ IF USING localActions:
     Add this.favorites inside of () */
   },

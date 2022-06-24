@@ -20,7 +20,7 @@
 
         <button
           class="button"
-          @click.prevent="$event.stopPropagation(clearCart())"
+          @click.prevent="$event.stopPropagation(clearAPICart())"
         >
           Limpar carrinho
         </button>
@@ -43,7 +43,7 @@ export default {
     ...mapGetters(['cartTotalPrice'])
   },
   mounted() {
-    this.getCartItems(this.cart);
+    this.getCartItems();
     /* ❗ IF USING localActions:
     Add this.cart inside of () */
   },
