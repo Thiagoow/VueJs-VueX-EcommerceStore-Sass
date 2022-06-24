@@ -62,7 +62,7 @@ export default {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: $mg-1;
   margin-bottom: $mg-1-5;
   background-color: $container-color;
