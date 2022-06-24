@@ -170,10 +170,11 @@ export default {
 
 .price {
   font-size: $normal-font-size;
+  margin-bottom: $mg-0-5;
 }
 .title {
   font-size: $small-font-size;
-  margin-bottom: $mg-0-5;
+  margin-bottom: $mg-1;
 }
 
 @media screen and (min-width: 992px) {
