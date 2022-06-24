@@ -58,7 +58,7 @@ export default {
         minimumFractionDigits: 2
       });
     },
-    clearAllCart() {
+    clearAPICart() {
       const IDsArray = productsArray.map((product) => product.id);
       this.clearFavorites(IDsArray);
       /* ❗ IF USING localActions:

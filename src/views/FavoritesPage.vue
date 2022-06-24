@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     ...mapActions(['getFavoriteItems', 'clearFavorites']),
-    clearAllFavorites() {
+    clearAPIFavorites() {
       const IDsArray = productsArray.map((product) => product.id);
       this.clearFavorites(IDsArray);
       /* ❗ IF USING localActions:
