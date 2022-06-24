@@ -50,10 +50,10 @@ export default {
     },
     insertOnAPI() {
       this.clearAllRoutes();
-      //Reload after 1 second to show products:
+      //Reload after 1.5s to show products:
       setTimeout(function () {
         window.location.reload(1);
-      }, 1000);
+      }, 1500);
 
       for (let i = 0; i < productsArray.length; i++) {
         axios
