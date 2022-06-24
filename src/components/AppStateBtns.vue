@@ -49,6 +49,12 @@ export default {
       this.addLocalProducts(productsArray);
     },
     insertOnAPI() {
+      this.clearAllRoutes();
+      //Reload after 1.5s to show products:
+      setTimeout(function () {
+        window.location.reload(1);
+      }, 1500);
+
       for (let i = 0; i < productsArray.length; i++) {
         axios
           .post('/products', productsArray[i], headers)
