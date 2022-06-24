@@ -44,6 +44,7 @@ export default {
       this.clearFavorites();
       /* ☝🏽❗ IF USING remoteActions:
       add IDsArray inside of () */
+      window.location.reload(1);
     },
     insertOnVueX() {
       this.addLocalProducts(productsArray);
