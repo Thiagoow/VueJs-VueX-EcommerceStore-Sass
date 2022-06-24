@@ -37,7 +37,7 @@ export default {
       'clearFavorites'
     ]),
     clearAllRoutes() {
-      const IDsArray = productsArray.map((product) => product.id);
+      //const IDsArray = productsArray.map((product) => product.id);
 
       this.clearProducts();
       this.clearCart();
