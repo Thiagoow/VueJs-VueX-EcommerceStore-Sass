@@ -37,9 +37,13 @@ export default {
       'clearFavorites'
     ]),
     clearAllRoutes() {
+      //const IDsArray = productsArray.map((product) => product.id);
+
       this.clearProducts();
       this.clearCart();
       this.clearFavorites();
+      /* ☝🏽❗ IF USING localActions:
+      Remove IDsArray inside of () */
     },
     insertOnVueX() {
       this.addLocalProducts(productsArray);
