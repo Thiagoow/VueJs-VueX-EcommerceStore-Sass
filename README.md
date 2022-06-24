@@ -10,13 +10,12 @@ Para o desafio técnico da vaga de Front End Jr, da DOT Digital Group.</p>
 
 ### Demo: https://vuex-media-store.vercel.app
 
-<p> Instalar o projeto localmente, com a pasta "node_modules": </p>
+##### Instalar o projeto localmente, com a pasta "node_modules":
 
 ```
 yarn install
 ```
-
-<p> Compilar/executar o projeto: </p>
+##### Compilar/executar o projeto:
 
 ```
 yarn dev
